@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"topic.dtd">
+<topic id="install">
+  <title>4 Steps to Nirvana</title>
+
+  <body>
+    <p>Now that you have confirmed the status of your system, it's time to
+    proceed towards complete enlightenment. Just follow these four easy steps
+    and without fail all of your dreams will come true.</p>
+
+    <ol>
+      <li>Copy the tar ball to your system using your very most favoritest
+      file transfer protocol... like this:<p><codeblock>COPY /R mytar.tar yourtar.tar</codeblock></p></li>
+
+      <li>Choose a deity or supernatural power to which you can offer a prayer
+      or offering of supplication.</li>
+
+      <li>Either grow a beard, or borrow one from your nearest hipster so that
+      you can begin to wear a pair of glasses sans lens. If neither of these
+      options is available to you, the following video provides another useful
+      option.<p><div><object data="https://www.youtube.com/v/VTnIjqEA4Ro">
+          <desc>Excellent beard procurement advice</desc>
+        </object></div></p></li>
+
+      <li>Call Shane Hirsekorn at 303-555-4312 between the hours of 2a.m. and
+      4a.m. MST</li>
+    </ol>
+  </body>
+</topic>

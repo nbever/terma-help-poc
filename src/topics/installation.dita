@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"topic.dtd">
+<topic id="installation">
+  <title>Installation</title>
+
+  <body>
+    <p>It's as easy as 1-2-3.</p>
+
+    <p/>
+
+    <p>Just follow the instructions in this chapter.</p>
+
+    <p><xref href="pre_req.dita">Pre-Reqs</xref></p>
+  </body>
+</topic>

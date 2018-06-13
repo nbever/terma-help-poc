@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN"
+"bookmap.dtd">
+<bookmap>
+  <title><image align="center" href="assets/terma-software-logo.png"
+  placement="break" width="200px"/><text>Online Help</text></title>
+
+  <frontmatter>
+    <booklists>
+      <toc/>
+    </booklists>
+  </frontmatter>
+
+  <chapter href="../../../../../home/nbever/Projects/terma-help-poc/src/topics/installation.dita"
+           navtitle="Installation">
+    <topicref href="../../../../../home/nbever/Projects/terma-help-poc/src/topics/machine_requirements.dita"
+              navtitle="System Requirements"/>
+
+    <topicref href="../../../../../home/nbever/Projects/terma-help-poc/src/topics/pre_req.dita"
+              navtitle="Preparation"/>
+
+    <topicref href="../../../../../home/nbever/Projects/terma-help-poc/src/topics/install.dita"
+              navtitle="Install Steps"/>
+  </chapter>
+
+  <appendix href="../../../../../home/nbever/Projects/terma-help-poc/src/topics/appendix.dita"
+            navtitle="Reference"/>
+
+  <backmatter>
+    <booklists>
+      <indexlist/>
+    </booklists>
+  </backmatter>
+</bookmap>

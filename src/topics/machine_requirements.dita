@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"topic.dtd">
+<topic id="machine_requirements">
+  <title>System Requirements</title>
+
+  <body>
+    <p>Before beginning the installation procedure it is important to verify
+    that your target system conforms to the minimum specifications to run
+    Terma JAWS© Server.</p>
+
+    <ul>
+      <li>8192 MB of RAM</li>
+
+      <li>Minimum of 2 CPUs (300 is the recommended number)</li>
+
+      <li>Installation of Oracle Java 1.8 or higher<p>(This can be obtained
+      from <xref format="html" href="https://java.com/download"
+      scope="external">https://java.com/download</xref>)</p></li>
+
+      <li>The background image is of Nate <keyword>Thurmond</keyword> during
+      his years with the Warriors.</li>
+    </ul>
+
+    <section><image align="center" href="../assets/nate-thurmond-ts.png"
+    placement="break"/></section>
+  </body>
+</topic>

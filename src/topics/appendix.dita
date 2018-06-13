@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN"
+"reference.dtd">
+<reference id="appendix">
+  <title>Reference</title>
+
+  <refbody>
+    <refsyn>What does a reference look like?</refsyn>
+
+    <section><title>The Great Uknown</title><p>And even greater
+    confusion</p><p><pre>This Text
+is   pre
+  formatt 
+         ed</pre>fin.</p></section>
+  </refbody>
+</reference>
