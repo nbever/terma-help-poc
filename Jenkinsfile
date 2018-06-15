@@ -3,7 +3,12 @@ pipeline {
   stages {
     stage('Build Help Set') {
       steps {
-        build 'build-help-set'
+        build 'terma-help-docs'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        sh 'echo ${WORKSPACE}: ${GIT_BRANCH}'
       }
     }
   }
