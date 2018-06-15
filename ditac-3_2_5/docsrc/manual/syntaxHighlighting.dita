@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"topic.dtd">
+<topic id="syntaxHighlighting">
+  <title>Syntax highlighting</title>
+
+  <shortdesc>This chapter explains how you can automatically colorize the
+  source code contained in <xmlelement>pre</xmlelement>,
+  <xmlelement>codeblock</xmlelement> or any other element specializing
+  <xmlelement>pre</xmlelement>.</shortdesc>
+
+  <body>
+    <p>You can automatically colorize the source code contained in
+    <xmlelement>pre</xmlelement>, <xmlelement>codeblock</xmlelement> or any
+    other element specializing <xmlelement>pre</xmlelement>. This feature,
+    commonly called <term>syntax highlighting</term>, has been implemented
+    using an open source software component called "<xref format="html"
+    href="https://sourceforge.net/projects/xslthl/" scope="external">XSLT
+    syntax highlighting</xref>".<indexterm>syntax highlighting</indexterm></p>
+
+    <p>If you want to turn on syntax highlighting in a DITA document, suffice
+    to add attribute <xmlatt>outputclass</xmlatt> to a
+    <xmlelement>pre</xmlelement>, <xmlelement>codeblock</xmlelement> or any
+    other element specializing <xmlelement>pre</xmlelement>. The value of
+    attribute <xmlatt>outputclass</xmlatt> must be any of:
+    <codeph>language-bourne</codeph>, <codeph>language-c</codeph>,
+    <codeph>language-cmake</codeph>, <codeph>language-cpp</codeph>,
+    <codeph>language-csharp</codeph>, <codeph>language-css21</codeph>,
+    <codeph>language-delphi</codeph>, <codeph>language-ini</codeph>,
+    <codeph>language-java</codeph>, <codeph>language-javascript</codeph>,
+    <codeph>language-lua</codeph>, <codeph>language-m2</codeph> (Modula 2),
+    <codeph>language-perl</codeph>, <codeph>language-php</codeph>,
+    <codeph>language-python</codeph>, <codeph>language-ruby</codeph>,
+    <codeph>language-sql1999</codeph>, <codeph>language-sql2003</codeph>,
+    <codeph>language-sql92</codeph>, <codeph>language-tcl</codeph>,
+    <codeph>language-upc</codeph> (Unified Parallel C),
+    <codeph>language-html</codeph>, <codeph>language-xml</codeph>.</p>
+
+    <p>If you want to customize syntax highlighting for an HTML-based output
+    format (XHTML, EPUB, etc), then redefine any of the following CSS
+    styles:</p>
+
+    <ul compact="yes">
+      <li><codeph>.hl-keyword</codeph> (keywords of a programming
+      language),</li>
+
+      <li><codeph>.hl-string</codeph> (string literal),</li>
+
+      <li><codeph>.hl-number</codeph> (number literal),</li>
+
+      <li><codeph>.hl-comment</codeph> (any type of comment),</li>
+
+      <li><codeph>.hl-doccomment</codeph> (comments used as documentation,
+      i.e. javadoc, or xmldoc),</li>
+
+      <li><codeph>.hl-directive</codeph> (preprocessor directive or in XML, a
+      processing-instruction),</li>
+
+      <li><codeph>.hl-annotation</codeph> (annotations or "attributes" as they
+      are called in .NET),</li>
+
+      <li><codeph>.hl-tag</codeph> (XML tag, i.e. element name),</li>
+
+      <li><codeph>.hl-attribute</codeph> (XML attribute name),</li>
+
+      <li><codeph>.hl-value</codeph> (XML attribute value),</li>
+
+      <li><codeph>.hl-doctype</codeph> (<codeph>&lt;!DOCTYPE&gt;</codeph> and
+      all its content).</li>
+    </ul>
+
+    <example><title>Customization of the syntax highlighting of a keyword for
+    HTML-based output formats</title><pre>.hl-keyword {
+    font-weight: bold;
+    color: #602060;
+}</pre></example>
+
+    <p>How to use a custom CSS stylesheet is explained in <xref
+    href="customCSS.dita"/>.</p>
+
+    <p>If you want to customize syntax highlighting for an XSL-FO-based output
+    format (PDF, RTF, etc), then redefine any of the following
+    <xmlelement>attribute-set</xmlelement>s: <tt>hl-keyword</tt>,
+    <tt>hl-string</tt>, <tt>hl-number</tt>, <tt>hl-comment</tt>,
+    <tt>hl-doccomment</tt>, <tt>hl-directive</tt>, <tt>hl-annotation</tt>,
+    <tt>hl-tag</tt>, <tt>hl-attribute</tt>, <tt>hl-value</tt>,
+    <tt>hl-doctype</tt>.</p>
+
+    <example><title>Customization of the syntax highlighting of a keyword for
+    XSL-FO-based output formats</title><pre outputclass="language-xml">&lt;xsl:attribute-set name="hl-keyword" use-attribute-sets="hl-style"&gt;
+  &lt;xsl:attribute name="font-weight"&gt;bold&lt;/xsl:attribute&gt;
+  &lt;xsl:attribute name="color"&gt;#602060&lt;/xsl:attribute&gt;
+&lt;/xsl:attribute-set&gt;</pre></example>
+
+    <p>How to use a custom XSLT stylesheet generating XSL-FO is explained in
+    <xref href="customAttributeSet.dita"/>.</p>
+  </body>
+</topic>

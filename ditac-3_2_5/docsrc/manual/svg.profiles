@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profiles class="com.xmlmind.xmleditext.profiling.dita.DITAProfileSet"
+          selectedProfileStyle="border-right: 5px solid green; padding-right: 2px;"
+          unselectedProfileStyle="border-right: 5px solid red; padding-right: 2px;"
+          xmlns="http://www.xmlmind.com/xmleditor/schema/profiling"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns:prf="http://www.xmlmind.com/xmleditor/schema/profiling"
+          xmlns:ns="http://www.w3.org/1999/xhtml">
+  <attributes>
+    <attribute allowMultipleValues="false" name="otherprops">
+      <value>svg=yes</value>
+
+      <value>svg=no</value>
+    </attribute>
+
+    <attribute allowMultipleValues="false" name="product">
+      <value style="text-decoration: line-through;">XXE</value>
+
+      <value>ditac</value>
+    </attribute>
+  </attributes>
+
+  <profile implementation="svg_files/svg.ditaval" xml:id="svg">
+    <attribute name="otherprops">
+      <value>svg=yes</value>
+    </attribute>
+
+    <attribute name="product" useToFlag="false">
+      <value>ditac</value>
+    </attribute>
+  </profile>
+
+  <profile implementation="svg_files/no_svg.ditaval" xml:id="no_svg">
+    <attribute name="otherprops">
+      <value>svg=no</value>
+    </attribute>
+
+    <attribute name="product" useToFlag="false">
+      <value>ditac</value>
+    </attribute>
+  </profile>
+</profiles>

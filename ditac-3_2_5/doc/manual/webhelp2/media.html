@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head><meta charset="UTF-8" />
+      
+      <title>Part I, Chapter 8. Rich media content</title>
+      <link href="resources/webhelp.css" rel="stylesheet" type="text/css" />
+      <meta content="This chapter explains how to add SVG, MathML, audio, video and Flash animations to your DITA topics and how ditac processes this rich media content in the case where the output format supports rich media (e.g. XHTML 5, EPUB 3) and also in the case where the output format does not support rich media (e.g. XHTML 1, PDF, RTF)." name="description" />
+      <meta content="XMLmind DITA Converter 3.2.5" name="generator" /><script charset="UTF-8" defer="defer" src="_wh/snowball_en.min.js" type="text/javascript"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript">
+    </script><script charset="UTF-8" src="_wh/wh.min.js" type="text/javascript">
+    </script><script charset="UTF-8" defer="defer" src="_wh/search.js" type="text/javascript">
+    </script><script>
+function onclickPI_play(id) {
+    var target = document.getElementById(id);
+    if (target !== null) {
+        target.currentTime = 0;
+        target.play();
+    }
+}
+
+function onclickPI_pause(id) {
+    var target = document.getElementById(id);
+    if (target !== null) {
+        target.pause();
+    }
+}
+
+function onclickPI_resume(id) {
+    var target = document.getElementById(id);
+    if (target !== null) {
+        target.play();
+    }
+}
+
+function onclickPI_mute(id) {
+    var target = document.getElementById(id);
+    if (target !== null) {
+        target.muted = true;
+    }
+}
+
+function onclickPI_unmute(id) {
+    var target = document.getElementById(id);
+    if (target !== null) {
+        target.muted = false;
+    }
+}
+
+function onclickPI_show(id) {
+    var target = document.getElementById(id);
+    if (target !== null) {
+        target.style.visibility = 'visible';
+    }
+}
+
+function onclickPI_hide(id) {
+    var target = document.getElementById(id);
+    if (target !== null) {
+        target.style.visibility = 'hidden';
+    }
+}
+    </script><script async="async" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_CHTML" type="text/javascript"></script><link href="_wh/wh.css" rel="stylesheet" type="text/css" /><link href="_wh/user/header_footer.css" rel="stylesheet" type="text/css" /></head>
+   
+<body>
+    <div id="wh-header">
+    <table id="page-header" style="border-spacing: 0; width: 100%;">
+      <tr>
+        <td style="vertical-align: middle; width: 110px;"><a href="http://www.xmlmind.com/"><img alt="XMLmind logo" height="50" src="_wh/user/header_footer_files/logo100x50.png" style="border-style: none;" width="100" /></a></td>
+
+        <td style="vertical-align: middle;"><h1 id="page-header-title">XMLmind
+        DITA Converter Manual</h1></td>
+
+        <td style="vertical-align: middle; width: 110px;"> </td>
+      </tr>
+    </table></div>
+
+    <div id="wh-body">
+      <div id="wh-navigation">
+        <div id="wh-navigation-form">
+          <span id="wh-search-group">
+            <span id="wh-do-search" title="Search"></span><input id="wh-search-field" placeholder="Search" type="text" /><span id="wh-cancel-search" title="Stop searching"></span>
+          </span>
+        </div>
+        <div id="wh-toc-pane">
+          <script charset="UTF-8" src="_wh/toc.js" type="text/javascript"></script>
+        </div>
+        <div id="wh-search-pane">
+          <div id="wh-search-results">
+          </div>
+        </div>
+      </div>
+      <div id="wh-content">
+      
+      <section class="concept" id="media" lang="en-US" xml:lang="en-US">
+         <h2 class="chapter-title">Chapter 8. Rich media content <span class="topic-navigation-bar"><a class="navigation-link" href="syntaxHighlighting.html#syntaxHighlighting" title="Previous topic: Chapter 7. Syntax highlighting"><img alt="Previous topic" class="navigation-icon" height="16" src="resources/previous.png" width="16" /></a> <a class="navigation-link" href="manual-3.html#I_3nbpi_" title="Parent topic: Part I. Using XMLmind DITA Converter"><img alt="Parent topic" class="navigation-icon" height="16" src="resources/parent.png" width="16" /></a> <img alt="Child topic" class="navigation-icon-disabled" height="16" src="resources/child_disabled.png" title="Child topic" width="16" /> <img alt="Next topic" class="navigation-icon-disabled" height="16" src="resources/next_disabled.png" title="Next topic" width="16" /></span></h2>
+         <div class="abstract">
+            <p class="shortdesc">This chapter explains how to add SVG, MathML, audio,
+               video and Flash animations to your DITA topics and how
+               <code class="cmdname">ditac</code> processes this rich media content in the case where
+               the output format supports rich media (e.g. XHTML 5, EPUB 3) and also in the
+               case where the output format does not support rich media (e.g. XHTML 1, PDF,
+               RTF).
+            </p>
+         </div>
+         <div class="conbody">
+            <section class="section" id="media__svg">
+               <h3 class="section-title">SVG</h3>
+               <div class="p">It is possible to include SVG
+                  graphics<a id="media__I_dcqq86_"></a> in a DITA document either by reference
+                  or by inclusion. Use an
+                  <code class="xmlelement">&lt;svg-container&gt;</code>/<code class="xmlelement">&lt;svgref&gt;</code>
+                  element pointing to an SVG file to include it by reference.
+                  Example:
+               </div>
+               <div class="p">
+                  <svg height="64.710144" id="svg2" version="1.1" viewBox="0 0 104.28986 51.768115" width="130.36232" xmlns="http://www.w3.org/2000/svg">
+                     
+                     <defs id="defs40"></defs>
+                     
+                     <g id="g3019" transform="matrix(0.3647343,0,0,0.3647343,4.0000001,3.999999)">
+                        
+                        <path d="m 0,0 156.36,0 c -11.54,2.31 -22.72,11.13 -24.59,23.28 0.7,0.07 2.09,0.2 2.79,0.27 -1.03,3.63 -1.66,7.36 -2.37,11.07 -4.86,-1.01 -9.76,-1.82 -14.71,-2.21 -0.16,1.35 -0.27,2.7 -0.37,4.05 -1.26,0.89 -2.28,2.24 -1.6,3.85 4.15,2.6 9.08,3.38 13.79,4.4 -0.63,8.55 -2.62,18.5 3.17,25.79 2.52,2.83 4.62,6.7 8.57,7.67 5.11,0.77 9.72,-2.61 13.13,-6.03 2.09,-2.1 -0.13,-5.95 -3,-5.4 -1.88,1.16 -3.47,2.71 -5.11,4.17 -2.83,-0.78 -6.3,-1.66 -7.12,-4.93 -1.68,-6.59 -1.3,-13.55 -0.78,-20.27 5.4,0.29 10.8,0.83 16.21,0.55 -0.49,-1.34 -0.14,-3.32 -1.74,-3.98 -4.19,-2.4 -8.87,-3.8 -13.3,-5.71 0.51,-3.63 1.1,-7.26 2,-10.82 0.15,-0.31 0.45,-0.92 0.6,-1.23 2.44,0.52 5.54,-0.06 7.34,2.07 2.01,2.13 4.46,3.74 6.82,5.45 1.79,2.83 2.72,6.26 5.3,8.57 4.8,5.01 12.01,5.86 18.33,7.74 -1.78,6.24 -9.22,7.8 -12.67,12.82 -2.04,3.23 -4.62,6.72 -2.89,10.73 0.53,-1.8 1.01,-3.61 1.48,-5.43 0.5,1.19 1,2.38 1.5,3.57 5.82,1.42 11.64,-2.61 17.41,-0.44 1.66,0.54 1.72,2.57 2.46,3.88 -5.4,-0.1 -11.1,-1.1 -16.23,1.13 -4.18,1.76 -7.98,5.58 -8.04,10.36 0.17,4.15 3.68,7.4 7.42,8.64 5.23,1.58 10.79,0.34 15.81,-1.45 0.39,0.29 1.18,0.87 1.58,1.17 3.36,-0.18 6.85,0.38 10.12,-0.63 2.35,-0.85 2.37,-4.46 0.54,-5.86 -1.5,-0.63 -3.14,-0.81 -4.71,-1.16 0.01,-4.84 0.12,-9.68 0,-14.52 -0.05,-3.65 -2.95,-6.23 -4.94,-8.97 -2.24,-2.53 -5.97,-2.04 -9.02,-2.08 2.93,-1.23 5.89,-2.43 8.89,-3.52 2.07,0.54 4.37,1.16 6.4,0.08 2.52,-1.07 3.1,-4.01 3.88,-6.34 5.61,-1.83 10.4,-5.37 15.62,-8.02 3.96,-3.01 8.49,-5.45 11.64,-9.4 2.02,-2.68 5.21,-3.98 7.74,-6.09 2.85,-2.36 6.61,-3.58 8.74,-6.78 4.31,-0.76 8.72,-0.93 12.98,-1.94 3.32,-1.84 6.44,-4.23 8.57,-7.43 L 264,120 0,120 0,73.78 c 11.14,6.37 22.37,12.6 33.65,18.7 3.34,2.36 7.69,-3.07 4.31,-5.6 -7.6,-4.74 -15.67,-8.74 -23.44,-13.21 7.07,-3.99 14.2,-7.88 21.29,-11.83 1.22,-0.81 2.76,-1.52 3.26,-3.01 -0.11,-1.22 -0.41,-2.42 -0.66,-3.62 -1.1,-0.38 -2.2,-0.75 -3.3,-1.13 C 23.27,60.27 11.73,67.02 0,73.4 L 0,0 z" id="path4" style="fill:#ffffff"></path>
+                        
+                        <path d="m 156.36,0 4.03,0 c 5.92,1.05 11.88,2.21 17.51,4.38 2.55,1.2 5.32,0.19 7.95,-0.12 7.07,-1.02 14.06,0.99 21.08,1.47 4.71,0.4 9.52,0.33 14.09,1.7 7.9,3.16 16.72,2.97 25,1.56 5.97,-1.03 12.02,-0.37 17.98,0.38 l 0,1.3 c -2.13,3.2 -5.25,5.59 -8.57,7.43 -4.26,1.01 -8.67,1.18 -12.98,1.94 -2.13,3.2 -5.89,4.42 -8.74,6.78 -2.53,2.11 -5.72,3.41 -7.74,6.09 -3.15,3.95 -7.68,6.39 -11.64,9.4 -5.22,2.65 -10.01,6.19 -15.62,8.02 -0.78,2.33 -1.36,5.27 -3.88,6.34 -2.03,1.08 -4.33,0.46 -6.4,-0.08 -3,1.09 -5.96,2.29 -8.89,3.52 3.05,0.04 6.78,-0.45 9.02,2.08 1.99,2.74 4.89,5.32 4.94,8.97 0.12,4.84 0.01,9.68 0,14.52 1.57,0.35 3.21,0.53 4.71,1.16 1.83,1.4 1.81,5.01 -0.54,5.86 -3.27,1.01 -6.76,0.45 -10.12,0.63 -0.4,-0.3 -1.19,-0.88 -1.58,-1.17 -5.02,1.79 -10.58,3.03 -15.81,1.45 -3.74,-1.24 -7.25,-4.49 -7.42,-8.64 0.06,-4.78 3.86,-8.6 8.04,-10.36 5.13,-2.23 10.83,-1.23 16.23,-1.13 -0.74,-1.31 -0.8,-3.34 -2.46,-3.88 -5.77,-2.17 -11.59,1.86 -17.41,0.44 -0.5,-1.19 -1,-2.38 -1.5,-3.57 -0.47,1.82 -0.95,3.63 -1.48,5.43 -1.73,-4.01 0.85,-7.5 2.89,-10.73 3.45,-5.02 10.89,-6.58 12.67,-12.82 -6.32,-1.88 -13.53,-2.73 -18.33,-7.74 -2.58,-2.31 -3.51,-5.74 -5.3,-8.57 -2.36,-1.71 -4.81,-3.32 -6.82,-5.45 -1.8,-2.13 -4.9,-1.55 -7.34,-2.07 -0.15,0.31 -0.45,0.92 -0.6,1.23 0.19,-2.48 0.25,-4.96 0.34,-7.43 -3.27,0.37 -6.36,1.7 -7.11,5.23 -0.7,-0.07 -2.09,-0.2 -2.79,-0.27 C 133.64,11.13 144.82,2.31 156.36,0 z" id="path6" style="fill:#010101"></path>
+                        
+                        <path d="M 160.39,0 264,0 l 0,9.37 c -5.96,-0.75 -12.01,-1.41 -17.98,-0.38 -8.28,1.41 -17.1,1.6 -25,-1.56 -4.57,-1.37 -9.38,-1.3 -14.09,-1.7 -7.02,-0.48 -14.01,-2.49 -21.08,-1.47 -2.63,0.31 -5.4,1.32 -7.95,0.12 C 172.27,2.21 166.31,1.05 160.39,0 z" id="path8" style="fill:#ffffff"></path>
+                        
+                        <path d="m 143.71,12.24 c 2.77,-4.96 8.77,-7.69 14.26,-8.24 6.78,0.63 13.53,2.26 19.86,4.81 -3.12,3.14 -6.51,6.15 -10.74,7.67 -2.78,1.03 -3.22,4.27 -3.26,6.84 1.26,-0.15 2.52,-0.29 3.78,-0.42 0.14,-3.16 3.5,-3.4 5.62,-4.81 3.64,-2.2 6.46,-5.44 9.48,-8.39 1.32,-1.41 3.38,-1.52 5.17,-1.68 6.45,-0.25 12.76,1.45 19.17,1.79 4.45,0.29 8.96,0.42 13.3,1.56 0.16,0.38 0.48,1.15 0.64,1.53 2.5,0.2 5,0.42 7.5,0.68 -0.1,0.31 -0.29,0.95 -0.39,1.27 1.05,0.24 3.15,0.71 4.2,0.94 -5.06,2.41 -10.37,4.31 -15.17,7.26 -3.48,2.29 -7.67,2.98 -11.49,4.48 -3.63,1.43 -7.74,1.02 -11.25,2.84 -3.04,1.54 -6.38,2.29 -9.58,3.43 -2.6,0.94 -4.71,-1.34 -6.66,-2.67 -0.92,0.96 -1.84,1.92 -2.75,2.89 2.68,2.9 6.72,4.86 10.72,3.75 3.74,-1.18 7.5,-2.36 11.03,-4.13 8.66,-1.65 17.43,-3.92 24.99,-8.65 3.9,-2.28 8.3,-3.5 12.29,-5.57 2.07,-1.01 3.03,-3.12 2.92,-5.36 6.04,-0.28 11.99,-1.87 18.08,-1.48 -0.42,0.43 -1.25,1.3 -1.67,1.74 -4.77,0.82 -9.59,1.26 -14.38,1.96 -0.84,1.43 -1.41,3.26 -3.14,3.86 -3.62,1.62 -6.19,4.81 -9.75,6.54 -2.82,1.39 -3.99,4.58 -6.44,6.41 -4.46,3.01 -8.51,6.63 -13.58,8.63 -3.41,2.62 -7.41,4.23 -11.52,5.4 -0.33,2.21 -0.79,4.44 -2.09,6.3 -0.18,-2.39 0.88,-5.31 -1.11,-7.23 -7.64,-1.25 -15.41,-2.42 -22.66,-5.29 -4.98,-2.02 -8.33,-6.87 -9.06,-12.12 -4.06,-1.12 -7.09,-4.17 -9.75,-7.27 -0.62,-1.46 -0.22,-3.18 -0.4,-4.74 -1.97,-1.65 -3.62,-3.74 -6.17,-4.53 z" id="path10" style="fill:#ffffff"></path>
+                        
+                        <path d="m 149.31,9.75 c 1.7,-0.11 3.4,-0.06 5.11,0.08 -0.68,2.82 -3.09,3.94 -5.84,3.45 0.18,-0.89 0.54,-2.65 0.73,-3.53 z" id="path12" style="fill:#010101"></path>
+                        
+                        <path d="m 137.03,19.13 c 1.17,-2.08 2.47,-4.09 3.86,-6.03 1.69,0.94 3.42,1.82 5.12,2.75 -3.14,0.65 -6.09,1.93 -8.98,3.28 z" id="path14" style="fill:#ffffff"></path>
+                        
+                        <path d="m 142.04,20.64 c 2,-0.94 3.83,-2.2 5.45,-3.71 0.29,1.4 0.5,2.81 0.83,4.2 -2.09,-0.2 -4.18,-0.41 -6.28,-0.49 z" id="path16" style="fill:#ffffff"></path>
+                        
+                        <path d="m 142.08,18.25 c 0.54,0.55 0.54,0.55 0,0 z" id="path18" style="fill:#0a51a0"></path>
+                        
+                        <path d="m 134.56,23.55 c 0.75,-3.53 3.84,-4.86 7.11,-5.23 -0.09,2.47 -0.15,4.95 -0.34,7.43 -0.9,3.56 -1.49,7.19 -2,10.82 4.43,1.91 9.11,3.31 13.3,5.71 1.6,0.66 1.25,2.64 1.74,3.98 -5.41,0.28 -10.81,-0.26 -16.21,-0.55 -0.52,6.72 -0.9,13.68 0.78,20.27 0.82,3.27 4.29,4.15 7.12,4.93 1.64,-1.46 3.23,-3.01 5.11,-4.17 2.87,-0.55 5.09,3.3 3,5.4 -3.41,3.42 -8.02,6.8 -13.13,6.03 -3.95,-0.97 -6.05,-4.84 -8.57,-7.67 -5.79,-7.29 -3.8,-17.24 -3.17,-25.79 -4.71,-1.02 -9.64,-1.8 -13.79,-4.4 -0.68,-1.61 0.34,-2.96 1.6,-3.85 0.1,-1.35 0.21,-2.7 0.37,-4.05 4.95,0.39 9.85,1.2 14.71,2.21 0.71,-3.71 1.34,-7.44 2.37,-11.07 z" id="path20" style="fill:#0a51a0"></path>
+                        
+                        <path d="m 71.09,55.85 c -1.87,-1.86 -0.88,-5.71 1.92,-5.96 3.41,-0.39 6.85,-0.1 10.27,-0.16 -0.04,12.01 0.08,24.03 -0.06,36.05 1.9,0.44 4.58,0.14 5.5,2.31 1.25,2.53 -0.98,5.5 -3.75,5.13 -3.08,-0.36 -7.12,1.3 -9.49,-1.13 -6.78,3.29 -15.81,3.27 -21.66,-1.89 -7.06,-6.01 -6.5,-18.14 0.49,-23.98 5.73,-5.63 15.14,-5.52 21.7,-1.41 0,-2.63 -0.01,-5.26 -0.01,-7.89 -1.64,-0.26 -3.56,0.1 -4.91,-1.07 z" id="path22" style="fill:#010101"></path>
+                        
+                        <path d="m 105.46,50 c 2.78,-0.01 5.55,0 8.32,0 -0.01,2.51 0,5.02 -0.01,7.53 -2.77,0 -5.54,0 -8.31,-0.02 0.01,-2.5 0.02,-5.01 0,-7.51 z" id="path24" style="fill:#010101"></path>
+                        
+                        <path d="m 180.28,53.55 c 3.16,0.3 6.19,-0.82 8.56,-2.89 -0.29,1.09 -0.56,2.19 -0.81,3.29 -5.37,2.01 -10.98,3.44 -16.03,6.21 2.69,-2.29 5.46,-4.48 8.28,-6.61 z" id="path26" style="fill:#ffffff"></path>
+                        
+                        <path d="m 0,73.4 c 11.73,-6.38 23.27,-13.13 35.11,-19.32 1.1,0.38 2.2,0.75 3.3,1.13 0.25,1.2 0.55,2.4 0.66,3.62 -0.5,1.49 -2.04,2.2 -3.26,3.01 -7.09,3.95 -14.22,7.84 -21.29,11.83 7.77,4.47 15.84,8.47 23.44,13.21 3.38,2.53 -0.97,7.96 -4.31,5.6 C 22.37,86.38 11.14,80.15 0,73.78 L 0,73.4 z" id="path28" style="fill:#010101"></path>
+                        
+                        <path d="m 208.19,55.18 c 0.71,-0.28 2.12,-0.84 2.82,-1.12 12.04,6.2 23.72,13.11 35.63,19.56 -11.08,6.23 -22.2,12.41 -33.34,18.54 -1.66,1.31 -3.58,0.64 -5.35,0.02 -0.62,-1.76 -1.5,-4.25 0.51,-5.47 7.66,-4.53 15.54,-8.72 23.33,-13.04 -7.39,-4.1 -14.8,-8.17 -22.17,-12.31 -1.39,-0.65 -2.11,-2.05 -2.89,-3.29 0.49,-0.96 0.98,-1.92 1.46,-2.89 z" id="path30" style="fill:#010101"></path>
+                        
+                        <path d="m 98.88,63.01 c 5.21,-0.51 10.44,0.18 15.67,0.02 -0.15,7.72 0.27,15.46 -0.34,23.17 3.56,0.46 7.19,-0.04 10.73,0.55 3.16,0.7 2.86,6.32 -0.44,6.64 -8.47,0.49 -16.96,-0.15 -25.44,-0.12 -1.7,0 -4.28,-0.33 -4.55,-2.41 -0.81,-1.92 0.56,-4.44 2.7,-4.55 3.33,-0.25 6.67,-0.05 10.01,-0.08 -0.05,-5.41 0.01,-10.81 0.3,-16.2 -3.09,-0.29 -6.69,0.75 -9.4,-1.15 -1.69,-1.81 -0.68,-4.29 0.76,-5.87 z" id="path32" style="fill:#010101"></path>
+                        
+                        <path d="m 62.45,69.6 c 6.59,-2.82 14.69,3.37 13.48,10.47 -1.5,8.92 -16.27,9.69 -19.47,1.57 -1.79,-4.8 1.36,-10.31 5.99,-12.04 z" id="path34" style="fill:#ffffff"></path>
+                        
+                        <path d="m 169.82,84.22 c 4.14,-4.86 10.95,-4.26 16.6,-3.27 0.02,0.71 0.05,2.14 0.07,2.86 -4.13,2.13 -8.85,4.08 -13.57,3.1 -1.56,-0.09 -2.19,-1.71 -3.1,-2.69 z" id="path36" style="fill:#ffffff"></path>
+                        
+                     </g>
+                     
+                  </svg>
+               </div>
+               <div class="p">The XML source code corresponding to the above
+                  example is:
+               </div><pre class="pre language-xml"><span class="hl-tag">&lt;p&gt;</span><span class="hl-tag">&lt;svg-container&gt;</span><span class="hl-tag">&lt;svgref</span> <span class="hl-attribute">href</span>=<span class="hl-value">&quot;media/graphic.svg&quot;</span><span class="hl-tag">/&gt;</span><span class="hl-tag">&lt;/svg-container&gt;</span><span class="hl-tag">&lt;/p&gt;</span></pre><div class="p">It's
+                  also possible to use an <code class="xmlelement">&lt;image&gt;</code> element pointing to
+                  an SVG file to include it by reference. Example:
+               </div><pre class="pre language-xml"><span class="hl-tag">&lt;p&gt;</span><span class="hl-tag">&lt;image</span> <span class="hl-attribute">href</span>=<span class="hl-value">&quot;media/graphic.svg&quot;</span><span class="hl-tag">/&gt;</span><span class="hl-tag">&lt;/p&gt;</span></pre><div class="p">Embedding
+                  SVG graphics in a DITA document can be achieved using the same
+                  <code class="xmlelement">&lt;svg-container&gt;</code> element.
+                  Example:
+               </div>
+               <div class="p">
+                  <svg contentScriptType="application/ecmascript" contentStyleType="text/css" height="64.710144" id="svg2" preserveAspectRatio="xMidYMid meet" version="1.1" viewBox="0 0 104.28986 51.768115" width="130.36232" zoomAndPan="magnify" xmlns="http://www.w3.org/2000/svg">
+                     <defs id="defs40"></defs>
+                     <g id="g3019" transform="matrix(0.3647343,0,0,0.3647343,4.0000001,3.999999)">
+                        <path d="m 0,0 156.36,0 c -11.54,2.31 -22.72,11.13 -24.59,23.28 0.7,0.07 2.09,0.2 2.79,0.27 -1.03,3.63 -1.66,7.36 -2.37,11.07 -4.86,-1.01 -9.76,-1.82 -14.71,-2.21 -0.16,1.35 -0.27,2.7 -0.37,4.05 -1.26,0.89 -2.28,2.24 -1.6,3.85 4.15,2.6 9.08,3.38 13.79,4.4 -0.63,8.55 -2.62,18.5 3.17,25.79 2.52,2.83 4.62,6.7 8.57,7.67 5.11,0.77 9.72,-2.61 13.13,-6.03 2.09,-2.1 -0.13,-5.95 -3,-5.4 -1.88,1.16 -3.47,2.71 -5.11,4.17 -2.83,-0.78 -6.3,-1.66 -7.12,-4.93 -1.68,-6.59 -1.3,-13.55 -0.78,-20.27 5.4,0.29 10.8,0.83 16.21,0.55 -0.49,-1.34 -0.14,-3.32 -1.74,-3.98 -4.19,-2.4 -8.87,-3.8 -13.3,-5.71 0.51,-3.63 1.1,-7.26 2,-10.82 0.15,-0.31 0.45,-0.92 0.6,-1.23 2.44,0.52 5.54,-0.06 7.34,2.07 2.01,2.13 4.46,3.74 6.82,5.45 1.79,2.83 2.72,6.26 5.3,8.57 4.8,5.01 12.01,5.86 18.33,7.74 -1.78,6.24 -9.22,7.8 -12.67,12.82 -2.04,3.23 -4.62,6.72 -2.89,10.73 0.53,-1.8 1.01,-3.61 1.48,-5.43 0.5,1.19 1,2.38 1.5,3.57 5.82,1.42 11.64,-2.61 17.41,-0.44 1.66,0.54 1.72,2.57 2.46,3.88 -5.4,-0.1 -11.1,-1.1 -16.23,1.13 -4.18,1.76 -7.98,5.58 -8.04,10.36 0.17,4.15 3.68,7.4 7.42,8.64 5.23,1.58 10.79,0.34 15.81,-1.45 0.39,0.29 1.18,0.87 1.58,1.17 3.36,-0.18 6.85,0.38 10.12,-0.63 2.35,-0.85 2.37,-4.46 0.54,-5.86 -1.5,-0.63 -3.14,-0.81 -4.71,-1.16 0.01,-4.84 0.12,-9.68 0,-14.52 -0.05,-3.65 -2.95,-6.23 -4.94,-8.97 -2.24,-2.53 -5.97,-2.04 -9.02,-2.08 2.93,-1.23 5.89,-2.43 8.89,-3.52 2.07,0.54 4.37,1.16 6.4,0.08 2.52,-1.07 3.1,-4.01 3.88,-6.34 5.61,-1.83 10.4,-5.37 15.62,-8.02 3.96,-3.01 8.49,-5.45 11.64,-9.4 2.02,-2.68 5.21,-3.98 7.74,-6.09 2.85,-2.36 6.61,-3.58 8.74,-6.78 4.31,-0.76 8.72,-0.93 12.98,-1.94 3.32,-1.84 6.44,-4.23 8.57,-7.43 L 264,120 0,120 0,73.78 c 11.14,6.37 22.37,12.6 33.65,18.7 3.34,2.36 7.69,-3.07 4.31,-5.6 -7.6,-4.74 -15.67,-8.74 -23.44,-13.21 7.07,-3.99 14.2,-7.88 21.29,-11.83 1.22,-0.81 2.76,-1.52 3.26,-3.01 -0.11,-1.22 -0.41,-2.42 -0.66,-3.62 -1.1,-0.38 -2.2,-0.75 -3.3,-1.13 C 23.27,60.27 11.73,67.02 0,73.4 L 0,0 z" id="path4" style="fill:#ffffff"></path>
+                        <path d="m 156.36,0 4.03,0 c 5.92,1.05 11.88,2.21 17.51,4.38 2.55,1.2 5.32,0.19 7.95,-0.12 7.07,-1.02 14.06,0.99 21.08,1.47 4.71,0.4 9.52,0.33 14.09,1.7 7.9,3.16 16.72,2.97 25,1.56 5.97,-1.03 12.02,-0.37 17.98,0.38 l 0,1.3 c -2.13,3.2 -5.25,5.59 -8.57,7.43 -4.26,1.01 -8.67,1.18 -12.98,1.94 -2.13,3.2 -5.89,4.42 -8.74,6.78 -2.53,2.11 -5.72,3.41 -7.74,6.09 -3.15,3.95 -7.68,6.39 -11.64,9.4 -5.22,2.65 -10.01,6.19 -15.62,8.02 -0.78,2.33 -1.36,5.27 -3.88,6.34 -2.03,1.08 -4.33,0.46 -6.4,-0.08 -3,1.09 -5.96,2.29 -8.89,3.52 3.05,0.04 6.78,-0.45 9.02,2.08 1.99,2.74 4.89,5.32 4.94,8.97 0.12,4.84 0.01,9.68 0,14.52 1.57,0.35 3.21,0.53 4.71,1.16 1.83,1.4 1.81,5.01 -0.54,5.86 -3.27,1.01 -6.76,0.45 -10.12,0.63 -0.4,-0.3 -1.19,-0.88 -1.58,-1.17 -5.02,1.79 -10.58,3.03 -15.81,1.45 -3.74,-1.24 -7.25,-4.49 -7.42,-8.64 0.06,-4.78 3.86,-8.6 8.04,-10.36 5.13,-2.23 10.83,-1.23 16.23,-1.13 -0.74,-1.31 -0.8,-3.34 -2.46,-3.88 -5.77,-2.17 -11.59,1.86 -17.41,0.44 -0.5,-1.19 -1,-2.38 -1.5,-3.57 -0.47,1.82 -0.95,3.63 -1.48,5.43 -1.73,-4.01 0.85,-7.5 2.89,-10.73 3.45,-5.02 10.89,-6.58 12.67,-12.82 -6.32,-1.88 -13.53,-2.73 -18.33,-7.74 -2.58,-2.31 -3.51,-5.74 -5.3,-8.57 -2.36,-1.71 -4.81,-3.32 -6.82,-5.45 -1.8,-2.13 -4.9,-1.55 -7.34,-2.07 -0.15,0.31 -0.45,0.92 -0.6,1.23 0.19,-2.48 0.25,-4.96 0.34,-7.43 -3.27,0.37 -6.36,1.7 -7.11,5.23 -0.7,-0.07 -2.09,-0.2 -2.79,-0.27 C 133.64,11.13 144.82,2.31 156.36,0 z" id="path6" style="fill:#010101"></path>
+                        <path d="M 160.39,0 264,0 l 0,9.37 c -5.96,-0.75 -12.01,-1.41 -17.98,-0.38 -8.28,1.41 -17.1,1.6 -25,-1.56 -4.57,-1.37 -9.38,-1.3 -14.09,-1.7 -7.02,-0.48 -14.01,-2.49 -21.08,-1.47 -2.63,0.31 -5.4,1.32 -7.95,0.12 C 172.27,2.21 166.31,1.05 160.39,0 z" id="path8" style="fill:#ffffff"></path>
+                        <path d="m 143.71,12.24 c 2.77,-4.96 8.77,-7.69 14.26,-8.24 6.78,0.63 13.53,2.26 19.86,4.81 -3.12,3.14 -6.51,6.15 -10.74,7.67 -2.78,1.03 -3.22,4.27 -3.26,6.84 1.26,-0.15 2.52,-0.29 3.78,-0.42 0.14,-3.16 3.5,-3.4 5.62,-4.81 3.64,-2.2 6.46,-5.44 9.48,-8.39 1.32,-1.41 3.38,-1.52 5.17,-1.68 6.45,-0.25 12.76,1.45 19.17,1.79 4.45,0.29 8.96,0.42 13.3,1.56 0.16,0.38 0.48,1.15 0.64,1.53 2.5,0.2 5,0.42 7.5,0.68 -0.1,0.31 -0.29,0.95 -0.39,1.27 1.05,0.24 3.15,0.71 4.2,0.94 -5.06,2.41 -10.37,4.31 -15.17,7.26 -3.48,2.29 -7.67,2.98 -11.49,4.48 -3.63,1.43 -7.74,1.02 -11.25,2.84 -3.04,1.54 -6.38,2.29 -9.58,3.43 -2.6,0.94 -4.71,-1.34 -6.66,-2.67 -0.92,0.96 -1.84,1.92 -2.75,2.89 2.68,2.9 6.72,4.86 10.72,3.75 3.74,-1.18 7.5,-2.36 11.03,-4.13 8.66,-1.65 17.43,-3.92 24.99,-8.65 3.9,-2.28 8.3,-3.5 12.29,-5.57 2.07,-1.01 3.03,-3.12 2.92,-5.36 6.04,-0.28 11.99,-1.87 18.08,-1.48 -0.42,0.43 -1.25,1.3 -1.67,1.74 -4.77,0.82 -9.59,1.26 -14.38,1.96 -0.84,1.43 -1.41,3.26 -3.14,3.86 -3.62,1.62 -6.19,4.81 -9.75,6.54 -2.82,1.39 -3.99,4.58 -6.44,6.41 -4.46,3.01 -8.51,6.63 -13.58,8.63 -3.41,2.62 -7.41,4.23 -11.52,5.4 -0.33,2.21 -0.79,4.44 -2.09,6.3 -0.18,-2.39 0.88,-5.31 -1.11,-7.23 -7.64,-1.25 -15.41,-2.42 -22.66,-5.29 -4.98,-2.02 -8.33,-6.87 -9.06,-12.12 -4.06,-1.12 -7.09,-4.17 -9.75,-7.27 -0.62,-1.46 -0.22,-3.18 -0.4,-4.74 -1.97,-1.65 -3.62,-3.74 -6.17,-4.53 z" id="path10" style="fill:#ffffff"></path>
+                        <path d="m 149.31,9.75 c 1.7,-0.11 3.4,-0.06 5.11,0.08 -0.68,2.82 -3.09,3.94 -5.84,3.45 0.18,-0.89 0.54,-2.65 0.73,-3.53 z" id="path12" style="fill:#010101"></path>
+                        <path d="m 137.03,19.13 c 1.17,-2.08 2.47,-4.09 3.86,-6.03 1.69,0.94 3.42,1.82 5.12,2.75 -3.14,0.65 -6.09,1.93 -8.98,3.28 z" id="path14" style="fill:#ffffff"></path>
+                        <path d="m 142.04,20.64 c 2,-0.94 3.83,-2.2 5.45,-3.71 0.29,1.4 0.5,2.81 0.83,4.2 -2.09,-0.2 -4.18,-0.41 -6.28,-0.49 z" id="path16" style="fill:#ffffff"></path>
+                        <path d="m 142.08,18.25 c 0.54,0.55 0.54,0.55 0,0 z" id="path18" style="fill:#0a51a0"></path>
+                        <path d="m 134.56,23.55 c 0.75,-3.53 3.84,-4.86 7.11,-5.23 -0.09,2.47 -0.15,4.95 -0.34,7.43 -0.9,3.56 -1.49,7.19 -2,10.82 4.43,1.91 9.11,3.31 13.3,5.71 1.6,0.66 1.25,2.64 1.74,3.98 -5.41,0.28 -10.81,-0.26 -16.21,-0.55 -0.52,6.72 -0.9,13.68 0.78,20.27 0.82,3.27 4.29,4.15 7.12,4.93 1.64,-1.46 3.23,-3.01 5.11,-4.17 2.87,-0.55 5.09,3.3 3,5.4 -3.41,3.42 -8.02,6.8 -13.13,6.03 -3.95,-0.97 -6.05,-4.84 -8.57,-7.67 -5.79,-7.29 -3.8,-17.24 -3.17,-25.79 -4.71,-1.02 -9.64,-1.8 -13.79,-4.4 -0.68,-1.61 0.34,-2.96 1.6,-3.85 0.1,-1.35 0.21,-2.7 0.37,-4.05 4.95,0.39 9.85,1.2 14.71,2.21 0.71,-3.71 1.34,-7.44 2.37,-11.07 z" id="path20" style="fill:#0a51a0"></path>
+                        <path d="m 71.09,55.85 c -1.87,-1.86 -0.88,-5.71 1.92,-5.96 3.41,-0.39 6.85,-0.1 10.27,-0.16 -0.04,12.01 0.08,24.03 -0.06,36.05 1.9,0.44 4.58,0.14 5.5,2.31 1.25,2.53 -0.98,5.5 -3.75,5.13 -3.08,-0.36 -7.12,1.3 -9.49,-1.13 -6.78,3.29 -15.81,3.27 -21.66,-1.89 -7.06,-6.01 -6.5,-18.14 0.49,-23.98 5.73,-5.63 15.14,-5.52 21.7,-1.41 0,-2.63 -0.01,-5.26 -0.01,-7.89 -1.64,-0.26 -3.56,0.1 -4.91,-1.07 z" id="path22" style="fill:#010101"></path>
+                        <path d="m 105.46,50 c 2.78,-0.01 5.55,0 8.32,0 -0.01,2.51 0,5.02 -0.01,7.53 -2.77,0 -5.54,0 -8.31,-0.02 0.01,-2.5 0.02,-5.01 0,-7.51 z" id="path24" style="fill:#010101"></path>
+                        <path d="m 180.28,53.55 c 3.16,0.3 6.19,-0.82 8.56,-2.89 -0.29,1.09 -0.56,2.19 -0.81,3.29 -5.37,2.01 -10.98,3.44 -16.03,6.21 2.69,-2.29 5.46,-4.48 8.28,-6.61 z" id="path26" style="fill:#ffffff"></path>
+                        <path d="m 0,73.4 c 11.73,-6.38 23.27,-13.13 35.11,-19.32 1.1,0.38 2.2,0.75 3.3,1.13 0.25,1.2 0.55,2.4 0.66,3.62 -0.5,1.49 -2.04,2.2 -3.26,3.01 -7.09,3.95 -14.22,7.84 -21.29,11.83 7.77,4.47 15.84,8.47 23.44,13.21 3.38,2.53 -0.97,7.96 -4.31,5.6 C 22.37,86.38 11.14,80.15 0,73.78 L 0,73.4 z" id="path28" style="fill:#010101"></path>
+                        <path d="m 208.19,55.18 c 0.71,-0.28 2.12,-0.84 2.82,-1.12 12.04,6.2 23.72,13.11 35.63,19.56 -11.08,6.23 -22.2,12.41 -33.34,18.54 -1.66,1.31 -3.58,0.64 -5.35,0.02 -0.62,-1.76 -1.5,-4.25 0.51,-5.47 7.66,-4.53 15.54,-8.72 23.33,-13.04 -7.39,-4.1 -14.8,-8.17 -22.17,-12.31 -1.39,-0.65 -2.11,-2.05 -2.89,-3.29 0.49,-0.96 0.98,-1.92 1.46,-2.89 z" id="path30" style="fill:#010101"></path>
+                        <path d="m 98.88,63.01 c 5.21,-0.51 10.44,0.18 15.67,0.02 -0.15,7.72 0.27,15.46 -0.34,23.17 3.56,0.46 7.19,-0.04 10.73,0.55 3.16,0.7 2.86,6.32 -0.44,6.64 -8.47,0.49 -16.96,-0.15 -25.44,-0.12 -1.7,0 -4.28,-0.33 -4.55,-2.41 -0.81,-1.92 0.56,-4.44 2.7,-4.55 3.33,-0.25 6.67,-0.05 10.01,-0.08 -0.05,-5.41 0.01,-10.81 0.3,-16.2 -3.09,-0.29 -6.69,0.75 -9.4,-1.15 -1.69,-1.81 -0.68,-4.29 0.76,-5.87 z" id="path32" style="fill:#010101"></path>
+                        <path d="m 62.45,69.6 c 6.59,-2.82 14.69,3.37 13.48,10.47 -1.5,8.92 -16.27,9.69 -19.47,1.57 -1.79,-4.8 1.36,-10.31 5.99,-12.04 z" id="path34" style="fill:#ffffff"></path>
+                        <path d="m 169.82,84.22 c 4.14,-4.86 10.95,-4.26 16.6,-3.27 0.02,0.71 0.05,2.14 0.07,2.86 -4.13,2.13 -8.85,4.08 -13.57,3.1 -1.56,-0.09 -2.19,-1.71 -3.1,-2.69 z" id="path36" style="fill:#ffffff"></path>
+                     </g>
+                  </svg>
+               </div>
+               <div class="p">The XML source code corresponding to the above
+                  example is:
+               </div><pre class="pre language-xml"><span class="hl-tag">&lt;p&gt;</span><span class="hl-tag">&lt;svg-container&gt;</span>
+  <span class="hl-tag">&lt;svg:svg</span> <span class="hl-attribute">height</span>=<span class="hl-value">&quot;64.710144&quot;</span> <span class="hl-attribute">version</span>=<span class="hl-value">&quot;1.1&quot;</span>
+    <span class="hl-attribute">viewBox</span>=<span class="hl-value">&quot;0 0 104.28986 51.768115&quot;</span> <span class="hl-attribute">width</span>=<span class="hl-value">&quot;130.36232&quot;</span>
+    <span class="hl-attribute">xmlns:svg</span>=<span class="hl-value">&quot;http://www.w3.org/2000/svg&quot;</span><span class="hl-tag">&gt;</span>
+  ...
+  <span class="hl-tag">&lt;/svg:svg&gt;</span>
+<span class="hl-tag">&lt;/svg-container&gt;</span><span class="hl-tag">&lt;/p&gt;</span></pre><div class="p">Notes:</div>
+               <ul class="ul">
+                  <li class="li">It is still recommended to include SVG graphics by reference using
+                     the <code class="xmlelement">&lt;image&gt;</code> element rather then
+                     <code class="xmlelement">&lt;svg-container&gt;</code>/<code class="xmlelement">&lt;svgref&gt;</code>.
+                     The <code class="xmlelement">&lt;image&gt;</code> element has useful attributes
+                     (<code class="xmlatt">@width</code>, <code class="xmlatt">@height</code>,
+                     <code class="xmlatt">@scale</code>, <code class="xmlatt">@scalefit</code>) allowing to adjust
+                     the dimension of the image. Moreover this elements permits on the fly
+                     conversion between image formats.
+                  </li>
+                  <li class="li">It is not recommended to embed SVG graphics in a DITA document as
+                     this is likely to cause many validation problems.
+                  </li>
+                  <li class="li">Only the following screen formats may contain SVG:
+                     XHTML 5<a id="media__I_9e7e39_"></a>, XHTML 5 Web
+                     Help<a id="media__I_spxcls_"></a> and
+                     EPUB 3<a id="media__I_9hz6h3_"></a>. Note that only
+                     modern web browsers support XHTML 5 and XHTML 5 Web Help. Very few
+                     EPUB readers (e.g. iBooks) support EPUB 3.
+                  </li>
+                  <li class="li">All XSL-FO based formats (PDF, RTF, DOCX, etc) support SVG
+                     whatever the XSL-FO processor you may use.
+                  </li>
+               </ul>
+            </section>
+            <section class="section" id="media__mathml">
+               <h3 class="section-title">MathML</h3>
+               <div class="p">It is possible to include
+                  math <a id="media__I_bubnkk_"></a> in a DITA document either by reference
+                  or by inclusion. Use an
+                  <code class="xmlelement">&lt;mathml&gt;</code>/<code class="xmlelement">&lt;mathmlref&gt;</code> element
+                  pointing to a MathML file to include it by reference.
+                  Example:
+               </div>
+               <div class="p">
+                  <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                     
+                     <mrow>
+                        
+                        <mrow>
+                           
+                           <mi>∇</mi>
+                           
+                           <mo>⁣</mo>
+                           
+                           <mi mathvariant="bold">E</mi>
+                           
+                        </mrow>
+                        
+                        <mo>=</mo>
+                        
+                        <mfrac>
+                           
+                           <mi>ρ</mi>
+                           
+                           <msub>
+                              
+                              <mi>ε</mi>
+                              
+                              <mn>0</mn>
+                              
+                           </msub>
+                           
+                        </mfrac>
+                        
+                     </mrow>
+                     
+                  </math>
+               </div>
+               <div class="p">The XML source code corresponding to the above example
+                  is:
+               </div><pre class="pre language-xml"><span class="hl-tag">&lt;p&gt;</span><span class="hl-tag">&lt;mathml&gt;</span><span class="hl-tag">&lt;mathmlref</span> <span class="hl-attribute">href</span>=<span class="hl-value">&quot;media/math.mml&quot;</span><span class="hl-tag">/&gt;</span><span class="hl-tag">&lt;/mathml&gt;</span><span class="hl-tag">&lt;/p&gt;</span></pre><div class="p">Embedding
+                  MathML in a DITA document can be achieved using the same
+                  <code class="xmlelement">&lt;mathml&gt;</code> element. Example:
+               </div>
+               <div class="p">
+                  <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                     <mrow>
+                        <mo>{</mo>
+                        <mtable>
+                           <mtr>
+                              <mtd>
+                                 <mrow>
+                                    <mrow>
+                                       <maligngroup></maligngroup>
+                                       <mo>∇×</mo>
+                                       <mi mathvariant="bold">E</mi>
+                                    </mrow>
+                                    <maligngroup></maligngroup>
+                                    <mo>=</mo>
+                                    <mrow>
+                                       <maligngroup></maligngroup>
+                                       <mo>-</mo>
+                                       <mstyle mathsize="100%">
+                                          <mfrac>
+                                             <mrow>
+                                                <mo>∂</mo>
+                                                <mo>⁡</mo>
+                                                <mi mathvariant="bold">B</mi>
+                                             </mrow>
+                                             <mrow>
+                                                <mo>∂</mo>
+                                                <mo>⁡</mo>
+                                                <mi>t</mi>
+                                             </mrow>
+                                          </mfrac>
+                                       </mstyle>
+                                    </mrow>
+                                 </mrow>
+                              </mtd>
+                           </mtr>
+                           <mtr>
+                              <mtd>
+                                 <mrow>
+                                    <mrow>
+                                       <maligngroup></maligngroup>
+                                       <mo>∇×</mo>
+                                       <mi mathvariant="bold">B</mi>
+                                    </mrow>
+                                    <maligngroup></maligngroup>
+                                    <mo>=</mo>
+                                    <mrow>
+                                       <mrow>
+                                          <maligngroup></maligngroup>
+                                          <msub>
+                                             <mi>μ</mi>
+                                             <mn>0</mn>
+                                          </msub>
+                                          <mo>⁢</mo>
+                                          <mi mathvariant="bold">J</mi>
+                                       </mrow>
+                                       <mo>+</mo>
+                                       <mrow>
+                                          <msub>
+                                             <mi>μ</mi>
+                                             <mn>0</mn>
+                                          </msub>
+                                          <mo>⁢</mo>
+                                          <msub>
+                                             <mi>ε</mi>
+                                             <mn>0</mn>
+                                          </msub>
+                                          <mo>⁢</mo>
+                                          <mstyle mathsize="100%">
+                                             <mfrac>
+                                                <mrow>
+                                                   <mo>∂</mo>
+                                                   <mo>⁡</mo>
+                                                   <mi mathvariant="bold">E</mi>
+                                                </mrow>
+                                                <mrow>
+                                                   <mo>∂</mo>
+                                                   <mo>⁡</mo>
+                                                   <mi>t</mi>
+                                                </mrow>
+                                             </mfrac>
+                                          </mstyle>
+                                       </mrow>
+                                    </mrow>
+                                 </mrow>
+                              </mtd>
+                           </mtr>
+                        </mtable>
+                     </mrow>
+                  </math>
+               </div>
+               <div class="p">The XML source code corresponding to the above example
+                  is:
+               </div><pre class="pre language-xml"><span class="hl-tag">&lt;p&gt;</span><span class="hl-tag">&lt;mathml&gt;</span>
+  <span class="hl-tag">&lt;m:math</span> <span class="hl-attribute">display</span>=<span class="hl-value">&quot;block&quot;</span> 
+    <span class="hl-attribute">xmlns:m</span>=<span class="hl-value">&quot;http://www.w3.org/1998/Math/MathML&quot;</span><span class="hl-tag">&gt;</span>
+    <span class="hl-tag">&lt;m:row&gt;</span>
+    ...
+    <span class="hl-tag">&lt;/m:mrow&gt;</span>
+  <span class="hl-tag">&lt;/m:math&gt;</span>
+<span class="hl-tag">&lt;/mathml&gt;</span><span class="hl-tag">&lt;/p&gt;</span></pre><div class="p">Notes:</div>
+               <ul class="ul">
+                  <li class="li">For clarity, it is recommended to wrap
+                     <code class="xmlelement">&lt;mathml&gt;</code> into the following equation elements:
+                     <code class="xmlelement">&lt;equation-inline&gt;</code>,
+                     <code class="xmlelement">&lt;equation-block&gt;</code>,
+                     <code class="xmlelement">&lt;equation-figure&gt;</code>.
+                  </li>
+                  <li class="li">There is an option to number
+                     <code class="xmlelement">&lt;equation-figure&gt;</code> elements having a
+                     <code class="xmlelement">&lt;title&gt;</code>. Example:
+                     <figure class="equation-figure" id="media__I_8es7p2_">
+                        <figcaption class="equation-figure-title">Equation 8-1. Gauss's law in its differential form</figcaption>
+                        <div class="equation-figure-contents">
+                           <math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+                              <mrow>
+                                 <mrow>
+                                    <mi>∇</mi>
+                                    <mo>⁣</mo>
+                                    <mi mathvariant="bold">E</mi>
+                                 </mrow>
+                                 <mo>=</mo>
+                                 <mfrac>
+                                    <mi>ρ</mi>
+                                    <msub>
+                                       <mi>ε</mi>
+                                       <mn>0</mn>
+                                    </msub>
+                                 </mfrac>
+                              </mrow>
+                           </math>
+                        </div>
+                     </figure>
+                     <div class="p"><code class="xmlelement">&lt;equation-block&gt;</code>
+                        elements containing a empty <code class="xmlelement">&lt;equation-number&gt;</code>
+                        are automatically numbered. Example:
+                     </div>
+                     <div class="equation-block">
+                        <table class="equation-block-layout">
+                           <tr>
+                              <td class="equation-block-equation">
+                                 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML">
+                                    <mrow>
+                                       <mrow>
+                                          <mi>∇</mi>
+                                          <mo>⁣</mo>
+                                          <mi mathvariant="bold">E</mi>
+                                       </mrow>
+                                       <mo>=</mo>
+                                       <mfrac>
+                                          <mi>ρ</mi>
+                                          <msub>
+                                             <mi>ε</mi>
+                                             <mn>0</mn>
+                                          </msub>
+                                       </mfrac>
+                                    </mrow>
+                                 </math>
+                              </td>
+                              <td class="equation-block-number"><span class="equation-number">(8-1)</span></td>
+                           </tr>
+                        </table>
+                     </div>
+                     <div class="p">The counter used to
+                        number to <code class="xmlelement">&lt;equation-figure&gt;</code> elements having a
+                        <code class="xmlelement">&lt;title&gt;</code> and the counter used to number
+                        <code class="xmlelement">&lt;equation-block&gt;</code> elements containing an empty
+                        <code class="xmlelement">&lt;equation-number&gt;</code> are different. Therefore
+                        mixing numbered <code class="xmlelement">&lt;equation-figure&gt;</code>s and numbered
+                        <code class="xmlelement">&lt;equation-block&gt;</code>s in the same DITA document may
+                        result in a hard to understand equation numbering.
+                     </div>
+                  </li>
+                  <li class="li">Only the following screen formats may contain MathML:
+                     XHTML 5<a id="media__I_1we3ti_"></a>, XHTML 5 Web
+                     Help<a id="media__I_13gi71_"></a> and
+                     EPUB 3<a id="media__I_omkfsh_"></a>. Most modern web
+                     browsers (Firefox, Chrome) support XHTML 5 and XHTML 5 Web Help
+                     containing MathML. Very few EPUB readers (e.g. iBooks) support
+                     EPUB 3.
+                  </li>
+                  <li class="li">XSL-FO based formats(PDF, RTF, DOCX, etc) support MathML depending
+                     on the XSL-FO processor you use:
+                     <ul class="compact-ul">
+                        <li class="li"><a class="xref" href="http://xmlgraphics.apache.org/fop/" target="_blank">Apache FOP <img alt="Opens in new window" height="10" src="resources/new_window.png" style="border-style: none;" width="10" /></a> requires you to download and
+                           install the the <a class="xref" href="http://jeuclid.sourceforge.net/jeuclid-fop/index.html" target="_blank">JEuclid FOP plug-in <img alt="Opens in new window" height="10" src="resources/new_window.png" style="border-style: none;" width="10" /></a>.
+                        </li>
+                        <li class="li"><a class="xref" href="http://www.renderx.com/tools/xep.html" target="_blank">RenderX XEP <img alt="Opens in new window" height="10" src="resources/new_window.png" style="border-style: none;" width="10" /></a> does not support MathML.
+                        </li>
+                        <li class="li"><a class="xref" href="https://www.antennahouse.com/antenna1/formatter/" target="_blank">Antenna House Formatter <img alt="Opens in new window" height="10" src="resources/new_window.png" style="border-style: none;" width="10" /></a> supports MathML as
+                           an option.
+                        </li>
+                        <li class="li"><a class="xref" href="http://www.xmlmind.com/foconverter/" target="_blank">XMLmind XSL-FO Converter <img alt="Opens in new window" height="10" src="resources/new_window.png" style="border-style: none;" width="10" /></a> supports MathML
+                           out of the box.
+                        </li>
+                     </ul>
+                  </li>
+               </ul>
+            </section>
+            <section class="section" id="media__audio">
+               <h3 class="section-title">Audio</h3>
+               <div class="p">Use the
+                  <code class="xmlelement">&lt;object&gt;</code> DITA element to add
+                  audio<a id="media__I_7nx66g_"></a> to your DITA topics.
+                  Example:
+               </div>
+               <div class="p">
+                  <audio class="object" controls="">
+                     <source src="images/audio.mp3" type="audio/mpeg" />
+                     <source src="images/audio.ogg" type="audio/ogg" />
+                     <source src="images/audio.m4a" type="audio/mp4" />
+                     <source src="images/audio.wav" type="audio/wav" />
+                     <div class="object-auto-fallback"><a class="object-download-link" href="images/audio.mp3" target="_blank"><img alt="audio.mp3" height="16" src="resources/play.png" style="border-style: none;" width="16" /> audio.mp3 (audio/mpeg)</a></div>
+                  </audio>
+               </div>
+               <div class="p">The XML source code corresponding to the above example
+                  is:
+               </div><pre class="pre language-xml"><span class="hl-tag">&lt;p&gt;</span><span class="hl-tag">&lt;object</span> <span class="hl-attribute">data</span>=<span class="hl-value">&quot;media/audio.mp3&quot;</span> <span class="hl-attribute">type</span>=<span class="hl-value">&quot;audio/mpeg&quot;</span><span class="hl-tag">&gt;</span>
+     <span class="hl-tag">&lt;param</span> <span class="hl-attribute">name</span>=<span class="hl-value">&quot;source&quot;</span> <span class="hl-attribute">value</span>=<span class="hl-value">&quot;media/audio.ogg&quot;</span>
+            <span class="hl-attribute">valuetype</span>=<span class="hl-value">&quot;ref&quot;</span> <span class="hl-attribute">type</span>=<span class="hl-value">&quot;audio/ogg&quot;</span><span class="hl-tag">/&gt;</span>
+
+     <span class="hl-tag">&lt;param</span> <span class="hl-attribute">name</span>=<span class="hl-value">&quot;source&quot;</span> <span class="hl-attribute">value</span>=<span class="hl-value">&quot;media/audio.m4a&quot;</span>
+            <span class="hl-attribute">valuetype</span>=<span class="hl-value">&quot;ref&quot;</span> <span class="hl-attribute">type</span>=<span class="hl-value">&quot;audio/mp4&quot;</span><span class="hl-tag">/&gt;</span>
+
+     <span class="hl-tag">&lt;param</span> <span class="hl-attribute">name</span>=<span class="hl-value">&quot;source&quot;</span> <span class="hl-attribute">value</span>=<span class="hl-value">&quot;media/audio.wav&quot;</span>
+            <span class="hl-attribute">valuetype</span>=<span class="hl-value">&quot;ref&quot;</span> <span class="hl-attribute">type</span>=<span class="hl-value">&quot;audio/wav&quot;</span><span class="hl-tag">/&gt;</span>
+
+     <span class="hl-tag">&lt;param</span> <span class="hl-attribute">name</span>=<span class="hl-value">&quot;controls&quot;</span> <span class="hl-attribute">value</span>=<span class="hl-value">&quot;true&quot;</span><span class="hl-tag">/&gt;</span>
+<span class="hl-tag">&lt;/object&gt;</span><span class="hl-tag">&lt;/p&gt;</span></pre><div class="p">Notes:</div>
+               <ul class="ul">
+                  <li class="li">The <code class="xmlatt">@data</code> and <code class="xmlatt">@type</code> attributes are
+                     required. The value of the <code class="xmlatt">@type</code> attribute must start
+                     with &quot;<span class="tt">audio/</span>&quot;.
+                  </li>
+                  <li class="li">It is strongly recommended to specify <i class="i">alternate audio files</i>
+                     as modern web browsers, while all supporting the HTML 5
+                     <code class="xmlelement">&lt;audio&gt;</code> element, vary in their support of audio
+                     formats. This is done by adding <code class="xmlelement">&lt;param&gt;</code> child
+                     elements to the <code class="xmlelement">&lt;object&gt;</code> element. Such
+                     <code class="xmlelement">&lt;param&gt;</code> elements must have a
+                     <span class="tt">name=&quot;source&quot;</span> attribute, a <span class="tt">valuetype=&quot;ref&quot;</span>
+                     attribute, a <code class="xmlatt">@value</code> attribute referencing an audio
+                     file and preferably, a <code class="xmlatt">@type</code> attribute specifying the
+                     media type of the audio file.
+                  </li>
+                  <li class="li">It is possible to add <code class="xmlelement">&lt;param&gt;</code> elements
+                     corresponding to the attributes supported by the HTML 5 audio element
+                     (<code class="xmlelement">&lt;crossorigin&gt;</code>,
+                     <code class="xmlelement">&lt;preload&gt;</code>, <code class="xmlelement">&lt;autoplay&gt;</code>,
+                     <code class="xmlelement">&lt;mediagroup&gt;</code>, <code class="xmlelement">&lt;loop&gt;</code>,
+                     <code class="xmlelement">&lt;muted&gt;</code>, <code class="xmlelement">&lt;controls&gt;</code>). In
+                     the above example, we have added a <code class="xmlelement">&lt;param&gt;</code>
+                     element corresponding to the <code class="xmlatt">@controls</code> HTML 5
+                     attribute. Note that in the case of HTML 5 <i class="i">boolean</i> attributes
+                     (<code class="xmlelement">&lt;autoplay&gt;</code>, <code class="xmlelement">&lt;loop&gt;</code>,
+                     <code class="xmlelement">&lt;muted&gt;</code>, <code class="xmlelement">&lt;controls&gt;</code>),
+                     the <code class="xmlatt">@value</code> attribute of a
+                     <code class="xmlelement">&lt;param&gt;</code> is not significant. For example, in the
+                     case of the above example, you could have specified &quot;<span class="tt">yes</span>&quot;,
+                     &quot;<span class="tt">on</span>&quot;, &quot;<span class="tt">1</span>&quot;, etc, instead of &quot;<span class="tt">true</span>&quot;.
+                  </li>
+                  <li class="li">If the <code class="xmlelement">&lt;object&gt;</code> element has a
+                     <code class="xmlelement">&lt;desc&gt;</code> child element, then this
+                     <code class="xmlelement">&lt;desc&gt;</code> element is used to generate fallback
+                     content in case audio is not supported. If the object element has no
+                     <code class="xmlelement">&lt;desc&gt;</code> child element, then a simple fallback
+                     content is automatically generated by ditac. This automatic fallback
+                     content basically consists in a link allowing to download the audio
+                     file.
+                  </li>
+                  <li class="li">When ditac is used to generate an XSL-FO based format (PDF, RTF,
+                     etc), only the fallback content appears in the output file.
+                  </li>
+               </ul>
+            </section>
+            <section class="section" id="media__video">
+               <h3 class="section-title">Video</h3>
+               <div class="p">Use the
+                  <code class="xmlelement">&lt;object&gt;</code> DITA element to add
+                  video<a id="media__I_rm057_"></a> to your DITA topics.
+                  Example:
+               </div>
+               <div class="p">
+                  <video class="object" controls="" poster="images/video_poster.jpg" width="320">
+                     <source src="images/video.mp4" type="video/mp4" />
+                     <source src="images/video.ogv" type="video/ogg; codecs=&quot;theora, vorbis&quot;" />
+                     <source src="images/video.webm" type="video/webm" />
+                     <div class="object-auto-fallback"><a class="object-download-link" href="images/video.mp4" target="_blank"><img alt="video.mp4" src="images/video_poster.jpg" style="border-style: none;" width="128" /> video.mp4 (video/mp4)</a></div>
+                  </video>
+               </div>
+               <div class="p">The XML source code corresponding to the above example
+                  is:
+               </div><pre class="pre language-xml"><span class="hl-tag">&lt;p&gt;</span><span class="hl-tag">&lt;object</span> <span class="hl-attribute">data</span>=<span class="hl-value">&quot;media/video.mp4&quot;</span> <span class="hl-attribute">type</span>=<span class="hl-value">&quot;video/mp4&quot;</span><span class="hl-tag">&gt;</span>
+     <span class="hl-tag">&lt;param</span> <span class="hl-attribute">name</span>=<span class="hl-value">&quot;source&quot;</span> <span class="hl-attribute">value</span>=<span class="hl-value">&quot;media/video.ogv&quot;</span>
+            <span class="hl-attribute">valuetype</span>=<span class="hl-value">&quot;ref&quot;</span> <span class="hl-attribute">type</span>=<span class="hl-value">'video/ogg; codecs=&quot;theora, vorbis&quot;'</span><span class="hl-tag">/&gt;</span>
+
+     <span class="hl-tag">&lt;param</span> <span class="hl-attribute">name</span>=<span class="hl-value">&quot;source&quot;</span> <span class="hl-attribute">value</span>=<span class="hl-value">&quot;media/video.webm&quot;</span>
+            <span class="hl-attribute">valuetype</span>=<span class="hl-value">&quot;ref&quot;</span> <span class="hl-attribute">type</span>=<span class="hl-value">&quot;video/webm&quot;</span><span class="hl-tag">/&gt;</span>
+
+     <span class="hl-tag">&lt;param</span> <span class="hl-attribute">name</span>=<span class="hl-value">&quot;width&quot;</span> <span class="hl-attribute">value</span>=<span class="hl-value">&quot;320&quot;</span><span class="hl-tag">/&gt;</span>
+     <span class="hl-tag">&lt;param</span> <span class="hl-attribute">name</span>=<span class="hl-value">&quot;controls&quot;</span> <span class="hl-attribute">value</span>=<span class="hl-value">&quot;yes&quot;</span><span class="hl-tag">/&gt;</span>
+     <span class="hl-tag">&lt;param</span> <span class="hl-attribute">name</span>=<span class="hl-value">&quot;poster&quot;</span> <span class="hl-attribute">value</span>=<span class="hl-value">&quot;media/video_poster.jpg&quot;</span>
+            <span class="hl-attribute">valuetype</span>=<span class="hl-value">&quot;ref&quot;</span><span class="hl-tag">/&gt;</span>
+<span class="hl-tag">&lt;/object&gt;</span><span class="hl-tag">&lt;/p&gt;</span></pre><div class="p">Notes:</div>
+               <ul class="ul">
+                  <li class="li">The <code class="xmlatt">@data</code> and <code class="xmlatt">@type</code> attributes are
+                     required. The value of the <code class="xmlatt">@type</code> attribute must start
+                     with &quot;<span class="tt">video/</span>&quot;.
+                  </li>
+                  <li class="li">It is strongly recommended to specify <i class="i">alternate video files</i>
+                     as modern web browsers, while all supporting the HTML 5
+                     <code class="xmlelement">&lt;video&gt;</code> element, vary in their support of video
+                     formats. This is done by adding <code class="xmlelement">&lt;param&gt;</code> child
+                     elements to the <code class="xmlelement">&lt;object&gt;</code> element. Such
+                     <code class="xmlelement">&lt;param&gt;</code> elements must have a
+                     <span class="tt">name=&quot;source&quot;</span> attribute, a <span class="tt">valuetype=&quot;ref&quot;</span>
+                     attribute, a <code class="xmlatt">@value</code> attribute referencing a video file
+                     and preferably, a <code class="xmlatt">@type</code> attribute specifying the media
+                     type of the video file.
+                  </li>
+                  <li class="li" id="media__other_video_params">It is possible to add
+                     <code class="xmlelement">&lt;param&gt;</code> elements corresponding to the
+                     attributes supported by the HTML 5 <code class="xmlelement">&lt;video&gt;</code>
+                     element (<code class="xmlelement">&lt;crossorigin&gt;</code>,
+                     <code class="xmlelement">&lt;poster&gt;</code>, <code class="xmlelement">&lt;preload&gt;</code>,
+                     <code class="xmlelement">&lt;autoplay&gt;</code>,
+                     <code class="xmlelement">&lt;mediagroup&gt;</code>, <code class="xmlelement">&lt;loop&gt;</code>,
+                     <code class="xmlelement">&lt;muted&gt;</code>, <code class="xmlelement">&lt;controls&gt;</code>,
+                     <code class="xmlelement">&lt;width&gt;</code>, <code class="xmlelement">&lt;height&gt;</code>). In
+                     the above example, we have added a <code class="xmlelement">&lt;param&gt;</code>
+                     element corresponding to the <code class="xmlelement">&lt;width&gt;</code>,
+                     <code class="xmlelement">&lt;controls&gt;</code> and <code class="xmlelement">&lt;poster&gt;</code>
+                     HTML 5 attributes. Note that in the case of HTML 5 <i class="i">boolean</i>
+                     attributes (<code class="xmlelement">&lt;autoplay&gt;</code>,
+                     <code class="xmlelement">&lt;loop&gt;</code>, <code class="xmlelement">&lt;muted&gt;</code>,
+                     <code class="xmlelement">&lt;controls&gt;</code>), the <code class="xmlatt">@value</code>
+                     attribute of a <code class="xmlelement">&lt;param&gt;</code> is not significant. For
+                     example, in the case of the above example, you could have specified
+                     &quot;<span class="tt">true</span>&quot;, &quot;<span class="tt">on</span>&quot;, &quot;<span class="tt">1</span>&quot;, etc, instead of
+                     &quot;<span class="tt">yes</span>&quot;.
+                  </li>
+                  <li class="li">If the <code class="xmlelement">&lt;object&gt;</code> element has a
+                     <code class="xmlelement">&lt;desc&gt;</code> child element, then this
+                     <code class="xmlelement">&lt;desc&gt;</code> element is used to generate fallback
+                     content in case video is not supported. If the object element has no
+                     <code class="xmlelement">&lt;desc&gt;</code> child element, then a simple fallback
+                     content is automatically generated by ditac. This automatic fallback
+                     content basically consists in a link allowing to download the video
+                     file. The <code class="xmlelement">&lt;param&gt;</code> element corresponding to the
+                     <code class="xmlelement">&lt;poster&gt;</code> HTML 5 attribute, if present, is used
+                     to generate a nicer automatic fallback content.
+                  </li>
+                  <li class="li">When ditac is used to generate an XSL-FO based format (PDF, RTF,
+                     etc), only the fallback content appears in the output file.
+                  </li>
+               </ul>
+            </section>
+            <section class="section" id="media__flash_animation">
+               <h3 class="section-title">Flash animation</h3>
+               <div class="p">Use the
+                  <code class="xmlelement">&lt;object&gt;</code> DITA element to add Adobe® Flash®
+                  animations<a id="media__I_gny5xn_"></a><a id="media__I_i04d4r_"></a><a id="media__I_qgh9c4_"></a>
+                  to your DITA topics. Example:
+               </div>
+               <div class="p"><object class="object" data="images/animation.swf" height="123" type="application/x-shockwave-flash" width="431">
+                     <param name="movie" value="images/animation.swf" />
+                     <param name="menu" value="true" />
+                     <param name="quality" value="low" />
+                     <div class="object-auto-fallback"><a class="object-download-link" href="images/animation.swf" target="_blank"><img alt="animation.swf" height="16" src="resources/play.png" style="border-style: none;" width="16" /> animation.swf (application/x-shockwave-flash)</a></div></object></div>
+               <div class="p">(You may have to right-click on the above screenshot and
+                  select <b class="uicontrol">Play</b> from the Flash popup menu to replay the
+                  animation.)
+               </div>
+               <div class="p">The XML source code corresponding to the above example
+                  is:
+               </div><pre class="pre language-xml"><span class="hl-tag">&lt;p&gt;</span><span class="hl-tag">&lt;object</span> <span class="hl-attribute">data</span>=<span class="hl-value">&quot;animation.swf&quot;</span> 
+           <span class="hl-attribute">type</span>=<span class="hl-value">&quot;application/x-shockwave-flash&quot;</span> 
+           <span class="hl-attribute">width</span>=<span class="hl-value">&quot;431&quot;</span> <span class="hl-attribute">height</span>=<span class="hl-value">&quot;123&quot;</span><span class="hl-tag">&gt;</span>
+    <span class="hl-tag">&lt;param</span> <span class="hl-attribute">name</span>=<span class="hl-value">&quot;movie&quot;</span> <span class="hl-attribute">value</span>=<span class="hl-value">&quot;animation.swf&quot;</span>
+           <span class="hl-attribute">valuetype</span>=<span class="hl-value">&quot;ref&quot;</span> <span class="hl-attribute">type</span>=<span class="hl-value">&quot;application/x-shockwave-flash&quot;</span><span class="hl-tag">/&gt;</span>
+
+    <span class="hl-tag">&lt;param</span> <span class="hl-attribute">name</span>=<span class="hl-value">&quot;menu&quot;</span> <span class="hl-attribute">value</span>=<span class="hl-value">&quot;true&quot;</span><span class="hl-tag">/&gt;</span>
+    <span class="hl-tag">&lt;param</span> <span class="hl-attribute">name</span>=<span class="hl-value">&quot;quality&quot;</span> <span class="hl-attribute">value</span>=<span class="hl-value">&quot;low&quot;</span><span class="hl-tag">/&gt;</span>
+<span class="hl-tag">&lt;/object&gt;</span><span class="hl-tag">&lt;/p&gt;</span></pre><div class="p">Notes:</div>
+               <ul class="ul">
+                  <li class="li">The <code class="xmlatt">@data</code>, <code class="xmlatt">@type</code>,
+                     <code class="xmlatt">@width</code> and <code class="xmlatt">@height</code> attributes are
+                     required. The <span class="tt">param name=movie</span> child element having the same
+                     value as attribute <code class="xmlatt">@data</code> is required too.
+                  </li>
+                  <li class="li">You may add any other <code class="xmlelement">&lt;param&gt;</code> child element
+                     supported by the Flash object. In the above example, you'll find
+                     <span class="tt">menu</span> and <span class="tt">quality</span> in addition to required
+                     <span class="tt">movie</span>.
+                  </li>
+                  <li class="li">If the <code class="xmlelement">&lt;object&gt;</code> element has a
+                     <code class="xmlelement">&lt;desc&gt;</code> child element, then this
+                     <code class="xmlelement">&lt;desc&gt;</code> element is used to generate fallback
+                     content in case Flash is not supported. If the object element has no
+                     <code class="xmlelement">&lt;desc&gt;</code> child element, then a simple fallback
+                     content is automatically generated by ditac. This automatic fallback
+                     content basically consists in a link allowing to download the
+                     <span class="tt">.swf</span> file.
+                  </li>
+                  <li class="li">When ditac is used to generate an XSL-FO based format (PDF, RTF,
+                     etc), only the fallback content appears in the output file.
+                  </li>
+               </ul>
+            </section>
+            <section class="section" id="media__other_media_objects">
+               <h3 class="section-title">Other uses of the
+                  <code class="xmlelement">&lt;object&gt;</code> element
+               </h3>
+               <div class="p">We have seen in previous
+                  sections how the <code class="xmlelement">&lt;object&gt;</code> DITA element may be used
+                  to add audio, video and Adobe® Flash® animations to your DITA topics. In
+                  any case other than those described in previous sections, the
+                  <code class="xmlelement">&lt;object&gt;</code> DITA element is converted to the
+                  equivalent <code class="xmlelement">&lt;object&gt;</code> XHTML element. For example, if
+                  you want to add a YouTube<a id="media__I_7fxdfg_"></a>
+                  video<a id="media__I_ysrylh_"></a> to your DITA topics, simply do it in
+                  DITA as you would do it in XHTML using the <code class="xmlelement">&lt;object&gt;</code>
+                  element.
+               </div>
+               <div class="p"><object class="object" data="https://www.youtube.com/embed/C0DPdy98e4c" height="360" width="640">
+                     <div class="object-fallback"><img alt="youtube_icon.png" class="image" src="images/youtube_icon.png" /> Watch this <a class="xref" href="https://youtu.be/C0DPdy98e4c" target="_blank">test video <img alt="Opens in new window" height="10" src="resources/new_window.png" style="border-style: none;" width="10" /></a> on YouTube.
+                     </div></object></div>
+               <div class="p">The XML source code corresponding to the above example
+                  is:
+               </div><pre class="pre language-xml"><span class="hl-tag">&lt;p&gt;</span><span class="hl-tag">&lt;object</span> <span class="hl-attribute">data</span>=<span class="hl-value">&quot;https://www.youtube.com/embed/C0DPdy98e4c&quot;</span>
+           <span class="hl-attribute">width</span>=<span class="hl-value">&quot;640&quot;</span> <span class="hl-attribute">height</span>=<span class="hl-value">&quot;360&quot;</span><span class="hl-tag">&gt;</span>
+     <span class="hl-tag">&lt;desc&gt;</span><span class="hl-tag">&lt;image</span> <span class="hl-attribute">href</span>=<span class="hl-value">&quot;media/youtube_icon.png&quot;</span><span class="hl-tag">/&gt;</span> Watch this <span class="hl-tag">&lt;xref</span> <span class="hl-attribute">format</span>=<span class="hl-value">&quot;html&quot;</span>
+     <span class="hl-attribute">href</span>=<span class="hl-value">&quot;https://youtu.be/C0DPdy98e4c&quot;</span> <span class="hl-attribute">scope</span>=<span class="hl-value">&quot;external&quot;</span><span class="hl-tag">&gt;</span>test video<span class="hl-tag">&lt;/xref&gt;</span> on
+     YouTube.<span class="hl-tag">&lt;/desc&gt;</span>
+<span class="hl-tag">&lt;/object&gt;</span><span class="hl-tag">&lt;/p&gt;</span></pre><div class="p">Notes:</div>
+               <ul class="ul">
+                  <li class="li">If the <code class="xmlelement">&lt;object&gt;</code> element has a
+                     <code class="xmlelement">&lt;desc&gt;</code> child element, then this
+                     <code class="xmlelement">&lt;desc&gt;</code> element is used to generate fallback
+                     content in case the media object is not supported. If the object
+                     element has no <code class="xmlelement">&lt;desc&gt;</code> child element, then a
+                     simple fallback content is automatically generated by ditac. This
+                     automatic fallback content basically consists in a link allowing to
+                     download the media file.
+                  </li>
+                  <li class="li">When ditac is used to generate an XSL-FO based format (PDF, RTF,
+                     etc), only the fallback content appears in the output file.
+                  </li>
+               </ul>
+            </section>
+            <section class="section" id="media__actions">
+               <h3 class="section-title">Actions</h3>
+               <div class="p">Unless you add
+                  <span class="tt">param name=&quot;controls&quot;</span> (see <a class="xref" href="#media__other_video_params">above</a>), you'll not be able to play
+                  audio or video. Even worse, without the <span class="tt">controls</span>
+                  <code class="xmlelement">&lt;param&gt;</code>, an audio object is not rendered on screen
+                  (that is, it is invisible).
+               </div>
+               <div class="p">A simple solution for this problem is to
+                  insert a <code class="xmlpi">&lt;?onclick?&gt;</code> processing-instruction in a DITA element
+                  (typically an <i class="i">inline</i> element such as <code class="xmlelement">&lt;xref&gt;</code>
+                  or <code class="xmlelement">&lt;ph&gt;</code>). The <code class="xmlpi">&lt;?onclick?&gt;</code>
+                  processing-instruction<a id="media__I_7te85z_"></a> allows to specify an number of
+                  actions:
+               </div>
+               <dl class="compact-dl">
+                  <dt class="dt"><span class="tt">play</span></dt>
+                  <dd class="dd">Play the associated resource from the beginning. Only applicable
+                     to video or audio targets.
+                  </dd>
+                  <dt class="dt"><span class="tt">pause</span></dt>
+                  <dd class="dd">Pause playing . Only applicable to video or audio targets.</dd>
+                  <dt class="dt"><span class="tt">resume</span></dt>
+                  <dd class="dd">Resume playing . Only applicable to video or audio targets.</dd>
+                  <dt class="dt"><span class="tt">mute</span></dt>
+                  <dd class="dd">Mute sound . Only applicable to video or audio targets.</dd>
+                  <dt class="dt"><span class="tt">unmute</span></dt>
+                  <dd class="dd">Unmute sound . Only applicable to video or audio targets.</dd>
+                  <dt class="dt"><span class="tt">show</span></dt>
+                  <dd class="dd">Set the visibility property of the target element to
+                     visible.
+                  </dd>
+                  <dt class="dt"><span class="tt">hide</span></dt>
+                  <dd class="dd">Set the visibility property of the target element to
+                     hidden.
+                  </dd>
+               </dl>
+               <div class="p">The above actions are exactly those supported by <a class="xref" href="http://idpf.org/epub/30/spec/epub30-contentdocs.html#sec-xhtml-epub-trigger">EPUB 3's
+                     <code class="xmlelement">&lt;epub:trigger&gt;</code></a><a id="media__I_qza00m_"></a><a id="media__I_q1bxrt_"></a>.
+               </div>
+               <div class="p">The <code class="xmlpi">&lt;?onclick?&gt;</code>
+                  processing-instruction is processed by <code class="cmdname">ditac</code> for the
+                  following output formats: XHTML 5<a id="media__I_wvj6r4_"></a>, XHTML 5 Web Help<a id="media__I_vmba6t_"></a> and EPUB 3<a id="media__I_gjfoiu_"></a>.
+                  It is discarded for any other output format.
+               </div>
+               <div class="p">The syntax for the
+                  content of <code class="xmlpi">&lt;?onclick?&gt;</code> is:
+               </div><pre class="pre"><i class="i">onclick_data</i> -&gt; <i class="i">action</i> (S <i class="i">action</i>)*
+<i class="i">action</i> -&gt; <i class="i">op</i> '(' <i class="i">target_id</i>? ')'
+<i class="i">op</i> -&gt; 'play'|'pause'|'resume'|'mute'|'unmute'
+      'show'|'hide'</pre><div class="p">When <i class="i">target_id</i> is not specified, it is
+                  taken from the <code class="xmlatt">@href</code> attribute of the element containing
+                  the <code class="xmlpi">&lt;?onclick?&gt;</code> processing-instruction. For example,
+                  <code class="codeph">&lt;xref href=&quot;#media/target_audio&quot;&gt;&lt;?onclick
+                     <b class="b">play()</b>?&gt;</code> is equivalent to: <code class="codeph">&lt;xref
+                     href=&quot;#media/target_audio&quot;&gt;&lt;?onclick
+                     <b class="b">play(media/target_audio)</b>?&gt;</code>.
+               </div>
+               <div class="p">Example 1: <a class="xref" href="#media__target_audio" id="media__I_r0hzoj_" onclick="onclickPI_play('media__target_audio'); return false;">Say: &quot;<i class="i" lang="fr" xml:lang="fr">Viens
+                        Hubble!</i>&quot;</a>, which, in French, means: &quot;Come here Hubble!&quot;.
+                  <audio class="object" id="media__target_audio">
+                     <source src="images/audio.wav" type="audio/wav" />
+                     <div class="object-fallback"><img alt="no_audio.png" class="image" src="images/no_audio.png" /> No audio. Say: &quot;<i class="i" lang="fr" xml:lang="fr">Viens Hubble!</i>&quot;, which, in French, means: &quot;Come here
+                        Hubble!&quot;.
+                     </div>
+                  </audio>
+               </div>
+               <div class="p">The XML source code corresponding to the above example
+                  is:
+               </div><pre class="pre language-xml"><span class="hl-tag">&lt;p&gt;</span>Example 1: <span class="hl-tag">&lt;xref</span> <span class="hl-attribute">href</span>=<span class="hl-value">&quot;#media/target_audio&quot;</span><span class="hl-tag">&gt;</span><span class="hl-directive">&lt;?onclick play()?&gt;</span>
+Say &quot;<span class="hl-tag">&lt;ph</span> <span class="hl-attribute">xml:lang</span>=<span class="hl-value">&quot;fr&quot;</span><span class="hl-tag">&gt;</span>Viens Hubble!<span class="hl-tag">&lt;/ph&gt;</span>&quot;<span class="hl-tag">&lt;/xref&gt;</span> 
+... 
+<span class="hl-tag">&lt;object</span> <span class="hl-attribute">data</span>=<span class="hl-value">&quot;media/audio.wav&quot;</span> <span class="hl-attribute">id</span>=<span class="hl-value">&quot;audio_sample&quot;</span> <span class="hl-attribute">type</span>=<span class="hl-value">&quot;audio/wav&quot;</span><span class="hl-tag">&gt;</span>
+  <span class="hl-tag">&lt;desc&gt;</span> ... <span class="hl-tag">&lt;/desc&gt;</span>
+<span class="hl-tag">&lt;/object&gt;</span><span class="hl-tag">&lt;/p&gt;</span></pre><div class="p">Example 2: <a class="xref" href="#media__target_image" id="media__I_mwjdse_" onclick="onclickPI_hide('media__target_image'); return false;">Hide Hubble</a>. <a class="xref" href="#media__target_image" id="media__I_sft8u0_" onclick="onclickPI_show('media__target_image'); return false;">Show Hubble</a>.
+               </div>
+               <figure class="fig" id="media__I_b7m0d6_">
+                  <figcaption class="fig-title">Figure 8-1. My name is Hubble. I'm a 7-month old Golden Retriever.</figcaption>
+                  <div class="fig-contents">
+                     <div class="image-container"><img alt="video_poster.jpg" class="image" id="media__target_image" src="images/video_poster.jpg" /></div>
+                  </div>
+               </figure>
+               <div class="p">The XML source code corresponding to the above example
+                  is:
+               </div><pre class="pre language-xml"><span class="hl-tag">&lt;p&gt;</span>Example 2: 
+<span class="hl-tag">&lt;xref</span> <span class="hl-attribute">href</span>=<span class="hl-value">&quot;#media/target_image&quot;</span><span class="hl-tag">&gt;</span><span class="hl-directive">&lt;?onclick hide()?&gt;</span>Hide Hubble<span class="hl-tag">&lt;/xref&gt;</span>.
+<span class="hl-tag">&lt;xref</span> <span class="hl-attribute">href</span>=<span class="hl-value">&quot;#media/target_image&quot;</span><span class="hl-tag">&gt;</span><span class="hl-directive">&lt;?onclick show()?&gt;</span>Show Hubble<span class="hl-tag">&lt;/xref&gt;</span>.<span class="hl-tag">&lt;/p&gt;</span></pre></section>
+         </div>
+      </section>
+   </div>
+    </div>
+
+    <div id="wh-footer">
+    <p id="page-footer">Web Help generated using <a href="http://www.xmlmind.com/ditac/" target="_blank">XMLmind DITA Converter</a>.</p></div>
+  </body></html>

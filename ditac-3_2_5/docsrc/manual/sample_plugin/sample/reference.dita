@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN"
+"reference.dtd">
+<reference id="aReference">
+  <title>A reference</title>
+
+  <refbody>
+    <section><title>A section</title><p>This paragraph contains a <tt>kbd</tt> element <kbd>Ctrl+O</kbd> and 
+    a <tt>time</tt> element 
+    <time datetime="2015-12-17">December 17, 2015</time>.</p></section>
+  </refbody>
+</reference>

@@ -1,0 +1,149 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta><title>Page headers and footers</title><link rel="stylesheet" type="text/css" href="resources/eclipsehelp.css"></link><meta name="generator" content="XMLmind DITA Converter 3.2.5"></meta></head><body><div id="pageHeaderFooter" xml:lang="en-US" lang="en-US" class="reference"><h2 class="section1-title">Page headers and footers</h2><div class="refbody"><div id="pageHeaderFooter__header_footer_spec" class="section"><h3 class="section-title">Specifying a header or a
+    footer</h3><div class="p">The header or the footer of a generated PDF, RTF, etc,
+    page has 3 columns.</div><div id="pageHeaderFooter__I_iuhk4m_" class="fig"><h4 class="fig-title">Layout of a header</h4><div class="fig-contents" style="border-width: 1px; border-style: solid; padding: 0.5ex;"><div class="image-container" style="text-align: center;"><img src="images/header_layout.png" class="image" alt="header_layout.png"></img></div></div></div><div class="p">The width of these columns may be specified using the <tt class="tt"><a href="xsltParams.html#xsltParams__header-left-width" class="xref">header-left-width</a></tt>,
+    <tt class="tt"><a href="xsltParams.html#xsltParams__header-center-width" class="xref">header-center-width</a></tt>,
+    <tt class="tt"><a href="xsltParams.html#xsltParams__header-right-width" class="xref">header-right-width</a></tt>
+    parameters for the header and the <tt class="tt"><a href="xsltParams.html#xsltParams__footer-left-width" class="xref">footer-left-width</a></tt>,
+    <tt class="tt"><a href="xsltParams.html#xsltParams__footer-center-width" class="xref">footer-center-width</a></tt>,
+    <tt class="tt"><a href="xsltParams.html#xsltParams__footer-right-width" class="xref">footer-right-width</a></tt>
+    parameters for the footer.</div><div class="p">The width of a column is specified as an
+    integer which is larger than or equal to 1. This value is the
+    <dfn class="term">proportional width of the column</dfn>. For example, if the left
+    column has a width equal to 2 and the right column has a width equal to 4,
+    this simply means that the right column is twice (4/2&nbsp;=&nbsp;2) as wide as the
+    left column.</div><div class="p">The contents of these columns may be specified using
+    the <tt class="tt"><a href="xsltParams.html#xsltParams__header-left" class="xref">header-left</a></tt>,
+    <tt class="tt"><a href="xsltParams.html#xsltParams__header-center" class="xref">header-center</a></tt>,
+    <tt class="tt"><a href="xsltParams.html#xsltParams__header-right" class="xref">header-right</a></tt>
+    parameters for the header and the <tt class="tt"><a href="xsltParams.html#xsltParams__footer-left" class="xref">footer-left</a></tt>,
+    <tt class="tt"><a href="xsltParams.html#xsltParams__footer-center" class="xref">footer-center</a></tt>,
+    <tt class="tt"><a href="xsltParams.html#xsltParams__footer-right" class="xref">footer-right</a></tt>
+    parameters for the footer.</div><div class="p">When <tt class="tt">header-left</tt>,
+    <tt class="tt">header-center</tt>, <tt class="tt">header-right</tt> are all specified as the
+    empty string, no header is generated. When <tt class="tt">footer-left</tt>,
+    <tt class="tt">footer-center</tt>, <tt class="tt">footer-right</tt> are all specified as the
+    empty string, no footer is generated.</div><div class="p">The content of a column is
+    basically a mix of text and variables. Example: "<tt class="tt">Page {{page-number}}
+    of {{page-count}}</tt>".</div><div class="p">Supported variables are:</div><dl class="dl"><dt id="pageHeaderFooter__document-title_variable" class="dt"><tt class="tt">{{document-title}}</tt></dt><dd class="dd">The title of the document<a id="pageHeaderFooter__I_3t0p6d_" name="pageHeaderFooter__I_3t0p6d_"></a>.</dd><dt id="pageHeaderFooter__document-date_variable" class="dt"><tt class="tt">{{document-date}}</tt></dt><dd class="dd">The publication date of the
+          document<a id="pageHeaderFooter__I_q9qgcv_" name="pageHeaderFooter__I_q9qgcv_"></a>.<div class="p">The
+          value of the variable comes from the last <tt class="tt">created</tt> or
+          <tt class="tt">revised</tt> element found in the
+          <tt class="tt">topicmeta</tt>/<tt class="tt">critdates</tt> or
+          <tt class="tt">bookmeta</tt>/<tt class="tt">critdates</tt> element of the map. More
+          precisely, it comes the value of attribute <tt class="tt">golive</tt>,
+          <tt class="tt">modified</tt> or <tt class="tt">date</tt>, considered in that order. The
+          value of this attribute must be something like
+          <i class="i">YYYY</i>-<i class="i">MM</i>-<i class="i">DD</i>, because it is parsed and then
+          formatted according to the <tt class="tt">xml:lang</tt> of the map. For
+          example, if <tt class="tt">golive="2014-02-23"</tt>, with
+          <tt class="tt">xml:lang="en"</tt>, it gives: "<tt class="tt">February 02, 2014</tt>" and
+          with <tt class="tt">xml:lang="fr"</tt>, it gives: "<tt class="tt">02 Février 2014</tt>".
+          If the map has no <tt class="tt">critdates</tt> element, then the current date
+          is used. If the value of attribute <tt class="tt">golive</tt>,
+          <tt class="tt">modified</tt> or <tt class="tt">date</tt> is not specified as
+          <i class="i">YYYY</i>-<i class="i">MM</i>-<i class="i">DD</i>, then this value is used as
+          is.</div></dd><dt id="pageHeaderFooter__chapter-title_variable" class="dt"><tt class="tt">{{chapter-title}}</tt></dt><dd class="dd">The title of the current <tt class="tt">part</tt>, <tt class="tt">chapter</tt>,
+          <tt class="tt">appendices</tt> or <tt class="tt">appendix</tt>
+          <a id="pageHeaderFooter__I_huybfj_" name="pageHeaderFooter__I_huybfj_"></a>.
+          Empty if the map being converted is not a <tt class="tt">bookmap</tt>.</dd><dt id="pageHeaderFooter__section1-title_variable" class="dt"><tt class="tt">{{section1-title}}</tt></dt><dd class="dd">The title of the current <tt class="tt">part</tt>, <tt class="tt">chapter</tt>,
+          <tt class="tt">appendices</tt> or <tt class="tt">appendix</tt> or <dfn class="term">section&nbsp;1</dfn>
+          <a id="pageHeaderFooter__I_ll3m_" name="pageHeaderFooter__I_ll3m_"></a>. A
+          section&nbsp;1 is specified by a non-typed <tt class="tt">topicref</tt> (that is,
+          not a <tt class="tt">part</tt>, <tt class="tt">chapter</tt>, <tt class="tt">preface</tt>,
+          <tt class="tt">appendix</tt>, <tt class="tt">dedication</tt>, etc) which is a direct child
+          of a <tt class="tt">map</tt> or <tt class="tt">bookmap</tt>.</dd><dt id="pageHeaderFooter__topic-title_variable" class="dt"><tt class="tt">{{topic-title}}</tt></dt><dd class="dd">The title of the current topic<a id="pageHeaderFooter__I_btvvfq_" name="pageHeaderFooter__I_btvvfq_"></a>. All
+          topics are guaranteed to have a corresponding
+          <tt class="tt">{{topic-title}}</tt>. Even automatically generated topics such
+          as <tt class="tt">toc</tt> or <tt class="tt">indexlist</tt> have a corresponding
+          <tt class="tt">{{topic-title}}</tt><a href="#I_d1575e398_" class="fn-link"><sup class="fn-callout">(1)</sup></a>.</dd><dt id="pageHeaderFooter__page-number_variable" class="dt"><tt class="tt">{{page-number}}</tt></dt><dd class="dd">Current page number within the current document division (front
+          matter, body matter or back matter) <a id="pageHeaderFooter__I_4t68li_" name="pageHeaderFooter__I_4t68li_"></a>.</dd><dt id="pageHeaderFooter__page-count_variable" class="dt"><tt class="tt">{{page-count}}</tt></dt><dd class="dd">Total number of pages of the current document division (front
+          matter, body matter or back matter)<a id="pageHeaderFooter__I_7szhm6_" name="pageHeaderFooter__I_7szhm6_"></a>.</dd><dt id="pageHeaderFooter__break_variable" class="dt"><tt class="tt">{{break}}</tt></dt><dd class="dd">A line break<a id="pageHeaderFooter__I_6ok629_" name="pageHeaderFooter__I_6ok629_"></a>.</dd><dt id="pageHeaderFooter__image_URI_variable" class="dt"><tt class="tt">{{image(URI)}}</tt></dt><dd class="dd">An image having specified URI<a id="pageHeaderFooter__I_7cul8g_" name="pageHeaderFooter__I_7cul8g_"></a>. A
+          relative URI is resolved against the current working directory.
+          Example: "<tt class="tt">{{image(artwork/logo.svg)}}</tt>".</dd><dt id="pageHeaderFooter__page-sequence_variable" class="dt"><tt class="tt">{{page-sequence}}</tt></dt><dd class="dd">Not for production use. Inserts in the header/footer the name of
+          the current page sequence <a id="pageHeaderFooter__I_2apv8x_" name="pageHeaderFooter__I_2apv8x_"></a>.
+          This allows to learn which name to use in a <dfn class="term">conditional header
+          or footer</dfn>. See <a href="#pageHeaderFooter__conditional_header_footer" class="xref">below</a>.</dd></dl></div><div id="pageHeaderFooter__conditional_header_footer" class="section"><h3 class="section-title">Conditional headers and
+    footers</h3><div class="p">The default value of <tt class="tt">header-center</tt> is
+    <tt class="tt">'{{document-title}}'</tt>. This means that each page of the generated
+    PDF, RTF, etc, file will have the document title centered on its top. But
+    what if you want the pages containing the Table of Contents have a
+    "<b class="b">Contents</b>" header? Is there a way to specify: use "<b class="b">Contents</b>"
+    for the pages containing the Table of Contents and use the title of the
+    document for any other page? </div><div class="p">This is done by specifying the
+    following conditional value for parameter <a href="xsltParams.html#xsltParams__header-center" class="xref"><tt class="tt">header-center</tt></a>:
+    <tt class="tt">'toc:: Contents;; {{document-title}}'</tt>.</div><div class="p">A conditional value
+    may contain one or more cases separated by "<tt class="tt">;;</tt>". Each case is
+    tested against the page being generated. The first case which matches the
+    page being generated is the one which is selected.</div><pre class="lines"><i class="i">conditional_value</i> --&gt; <i class="i">case</i> [ "<b class="b">;;</b>" <i class="i">case</i> ]*
+
+<i class="i">case</i> --&gt; [ <i class="i">condition</i> "<b class="b">::</b>" ]* <i class="i">value</i>
+
+<i class="i">condition</i> --&gt; [ <i class="i">test_page_sequence</i> ]?
+                     &amp; [ S <i class="i">test_page_layout</i> ]?
+                     &amp; [ S <i class="i">test_page_side</i> ]?</pre><div class="p">Let's
+    suppose you also want the the pages containing the Index have a
+    "<b class="b">Index</b>" header. Specifying <tt class="tt">'toc:: Contents;;
+    {{document-title}};; indexList:: Index'</tt> won't work as expected
+    because the second case (having no condition at all) matches any page,
+    including the Index pages. You need to specify: <tt class="tt">'toc:: Contents;;
+    indexlist:: Index;; {{document-title}}'</tt>.</div><div class="p">Let's remember that
+    variable <a href="#pageHeaderFooter__topic-title_variable" class="xref"><tt class="tt">{{topic-title}}</tt></a>
+    is substituted with the title of the current topic, including
+    automatically generated topics such <tt class="tt">toc</tt> and
+    <tt class="tt">indexlist</tt>.<a id="pageHeaderFooter__I_hix5ff_" name="pageHeaderFooter__I_hix5ff_"></a></div><div class="p">Therefore
+    our conditional value is better expressed as: <tt class="tt">'toc:: indexlist::
+    {{topic-title}};; {{document-title}}'</tt>. Notice how a case may have
+    several conditions. Suffice for any of these conditions to match the page
+    being generated for the case to be selected.</div><div class="p">Even better, specify
+    <tt class="tt">'toc||indexlist:: {{topic-title}};; {{document-title}}'</tt>. String
+    "<tt class="tt">||</tt>" may be used to separate alternative values to be tested
+    against the page being generated.</div><pre class="lines"><i class="i">test_page_sequence</i> --&gt; <i class="i">page_sequence</i> [ "<b class="b">||</b>" <i class="i">page_sequence</i> ]*
+
+<i class="i">page_sequence</i> --&gt; "<b class="b">abbrevlist</b>" | "<b class="b">amendments</b>" | "<b class="b">appendices</b>" | "<b class="b">appendix</b>"
+                              | "<b class="b">backmattersection</b>" | "<b class="b">bibliolist</b>" | "<b class="b">bookabstract</b>" | "<b class="b">booklist</b>" 
+                              | "<b class="b">chapter</b>" | "<b class="b">colophon</b>" | "<b class="b">dedication</b>" | "<b class="b">draftintro</b>" 
+                              | "<b class="b">figurelist</b>" | "<b class="b">glossarylist</b>" | "<b class="b">indexlist</b>" | "<b class="b">notices</b>" 
+                              | "<b class="b">part</b>" | "<b class="b">preface</b>" | "<b class="b">section1</b>" | "<b class="b">tablelist</b>" 
+                              | "<b class="b">toc</b>" | "<b class="b">trademarklist</b>"</pre><div class="note"><table class="note-layout"><tr><td class="note-icon"><img src="resources/tip.png" alt="Tip" width="32" height="32"></img></td><td class="note-text"><h5 class="note-head">Tip</h5><div class="note-body"><div class="p">It's not difficult to guess that the name of the page
+    sequence corresponding to the Table of Contents is <tt class="tt">toc</tt> and that
+    the name of the page sequence corresponding to the Index is
+    <tt class="tt">indexlist</tt>. However the simplest way to learn what is the name of
+    the page sequence being generated is to reference variable <a href="#pageHeaderFooter__page-sequence_variable" class="xref"><tt class="tt">{{page-sequence}}</tt></a>
+    in the specification of a header or a footer.<a id="pageHeaderFooter__I_pgowyo_" name="pageHeaderFooter__I_pgowyo_"></a></div></div></td></tr></table></div><div class="p">Now
+    let's suppose that we want to suppress the document title on the first
+    page of a part, chapter or appendix. This is specified as follows:
+    <tt class="tt">'first part||chapter||appendix:: ;; toc||indexlist:: {{topic-title}};;
+    {{document-title}}'</tt>.</div><div class="p">For now, we have only described a
+    condition about the page sequence being generated: TOC, Index, etc. In
+    fact, a condition may test up to 3 facets of the page being
+    generated:</div><ul class="compact-ul"><li class="li">The page sequence to which belongs the page being generated.</li><li class="li">Whether the page being generated is part of a one-sided or a
+        two-sided document.</li><li class="li">Whether the page being generated is the first page of its
+        sequence. When the the page being generated is <i class="i">not</i> the first
+        page of its sequence, if the page being generated has an odd or an
+        even page number.</li></ul><pre class="lines"><i class="i">test_page_layout</i> --&gt; <i class="i">page_layout</i> [ "<b class="b">||</b>" <i class="i">page_layout</i> ]*
+
+<i class="i">page_layout</i> --&gt; "<b class="b">two-sides</b>" | "<b class="b">one-side</b>"
+
+<i class="i">test_page_side</i> --&gt; <i class="i">page_side</i> [ "<b class="b">||</b>" <i class="i">page_side</i> ]*
+
+<i class="i">page_side</i> --&gt; "<b class="b">first</b>" | "<b class="b">odd</b>" | "<b class="b">even</b>"</pre><div class="note"><table class="note-layout"><tr><td class="note-icon"><img src="resources/remember.png" alt="Remember" width="32" height="32"></img></td><td class="note-text"><h5 class="note-head">Remember</h5><div class="note-body"><div class="p">When the document has one side, the only possible page
+    side is <tt class="tt">odd</tt>. The other values, <tt class="tt">first</tt> and <tt class="tt">even</tt>,
+    are not supported. For example, something like
+    <tt class="tt">'one-side&nbsp;chapter||appendix&nbsp;even::&nbsp;{{chapter-title}};;'</tt> cannot
+    generate any text.</div></div></td></tr></table></div><div class="p">The order of the tests is not significant.
+    For example, <tt class="tt">'first part||chapter||appendix'</tt> is equivalent to
+    <tt class="tt">'part||chapter||appendix first'</tt>.</div><div class="p">Therefore <tt class="tt">'first
+    part||chapter||appendix:: ;; toc||indexlist:: {{topic-title}};;
+    {{document-title}}'</tt> reads as follows:</div><ol class="compact-ol"><li class="li">Use the empty string for the first page of a part, chapter or
+        appendix.</li><li class="li">Use the topic title for the pages containing the Table of
+        Contents. This title is "<b class="b">Table of Contents</b>", but localized
+        according to the main language of the DITA document being
+        converted.</li><li class="li">Use the topic title for the pages containing the Index. This title
+        is "<b class="b">Index</b>", but localized according to the main language of the
+        DITA document being converted.</li><li class="li">For any other page, use the title of the DITA document.</li></ol><div class="note"><table class="note-layout"><tr><td class="note-icon"><img src="resources/note.png" alt="Note" width="32" height="32"></img></td><td class="note-text"><h5 class="note-head">Note</h5><div class="note-body">Everything explained in this section applies not only to the
+    contents of a column of a header or footer, but also to the proportional
+    width of a column of a header or footer. Example:
+    <tt class="tt">-p&nbsp;footer-right-width&nbsp;"first||odd::&nbsp;4;;&nbsp;even::&nbsp;1"</tt>.</div></td></tr></table></div></div></div></div><hr class="footnote-separator"></hr><table class="fn-layout"><tr><td valign="baseline">&nbsp;<sup class="fn-callout">(1)</sup></td><td valign="baseline" id="I_d1575e398_" class="fn">The <tt class="tt">{{topic-title}}</tt> of a
+          <tt class="tt">toc</tt> is "<b class="b">Table of Contents</b>", properly localized. The
+          <tt class="tt">{{topic-title}}</tt> of a <tt class="tt">indexlist</tt> is "<b class="b">Index</b>",
+          properly localized.</td></tr></table></body></html>

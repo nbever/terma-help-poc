@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"topic.dtd">
+<topic id="bgcolor">
+  <title>Giving a background color to table cells</title>
+
+  <shortdesc>This chapter explains how you can give a background color to
+  table cells by adding a <tt>bgcolor(<i>color</i>)</tt> directive to the
+  <xmlatt>outputclass</xmlatt> attribute of most table elements.</shortdesc>
+
+  <body>
+    <p>It's possible to give a background color to table
+    cells<indexterm>table, background color</indexterm> by adding a
+    <tt>bgcolor(<i>color</i>)</tt> directive, where <i>color</i> is any CSS
+    color value, to the <xmlatt>outputclass</xmlatt> attribute of the
+    following elements:</p>
+
+    <dl>
+      <dlentry>
+        <dt>Inside a <xmlelement>simpletable</xmlelement> element</dt>
+
+        <dd><xmlelement>simpletable</xmlelement>,
+        <xmlelement>sthead</xmlelement>, <xmlelement>strow</xmlelement>,
+        <xmlelement>stentry</xmlelement>.</dd>
+      </dlentry>
+
+      <dlentry>
+        <dt>Inside a <xmlelement>table</xmlelement> element</dt>
+
+        <dd><xmlelement>tgroup</xmlelement>, <xmlelement>thead</xmlelement>,
+        <xmlelement>tbody</xmlelement>, <xmlelement>row</xmlelement>,
+        <xmlelement>entry</xmlelement>.</dd>
+      </dlentry>
+    </dl>
+
+    <p>Example:</p>
+
+    <pre outputclass="language-xml">&lt;table&gt;
+  &lt;tgroup cols="2" <b>outputclass="bgcolor(#F0FFFF)"</b>&gt;
+    &lt;tbody&gt;
+      &lt;row&gt;
+        &lt;entry&gt;C1,1&lt;/entry&gt;
+        &lt;entry&gt;C1,2&lt;/entry&gt;
+      &lt;/row&gt;
+      &lt;row <b>outputclass="bgcolor(#FFFFF0)"</b>&gt;
+        &lt;entry&gt;C2,1&lt;/entry&gt;
+        &lt;entry&gt;C2,2&lt;/entry&gt;
+      &lt;/row&gt;
+    &lt;/tbody&gt;
+  &lt;/tgroup&gt;
+&lt;/table&gt;</pre>
+
+    <p>Note that it is still possible to specify any class name you want in
+    the <xmlatt>outputclass</xmlatt> attribute of a table element. Example:
+    <codeph>&lt;simpletable outputclass="bgcolor(#FFFFF0)
+    fancy-table"&gt;</codeph>.</p>
+  </body>
+</topic>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Part I, Chapter 6. Giving a background color to table cells</title>
+      <link rel="stylesheet" type="text/css" href="resources/basic.css" />
+      <meta name="description" content="This chapter explains how you can give a background color to table cells by adding a bgcolor(color) directive to the outputclass attribute of most table elements." />
+      <meta name="generator" content="XMLmind DITA Converter 3.2.5" />
+   </head>
+   <body>
+      <div class="page-navigation-header">
+         <table class="page-navigation-layout" width="100%">
+            <tr>
+               <td align="left" valign="top"><a href="index.html" class="navigation-link" title="First page: XMLmind DITA Converter Manual"><img class="navigation-icon" src="resources/first.png" alt="First page" width="16" height="16" /></a></td>
+               <td align="left" valign="top"><a href="olNumbering.html" class="navigation-link" title="Previous page: Part I, Chapter 5. Controlling the numbering of ordered lists"><img class="navigation-icon" src="resources/previous.png" alt="Previous page" width="16" height="16" /></a></td>
+               <td width="25%" align="left" valign="top"><span class="page-navigation-previous">Part I, Chapter 5. Controlling the numbering of ordered lists</span></td>
+               <td width="40%" align="center" valign="top"><span class="page-navigation-current">Part I, Chapter 6. Giving a background color to table cells</span> <span class="page-navigation-page">(12 / 25)</span></td>
+               <td width="25%" align="right" valign="top"><span class="page-navigation-next">Part I, Chapter 7. Syntax highlighting</span></td>
+               <td align="right" valign="top"><a href="syntaxHighlighting.html" class="navigation-link" title="Next page: Part I, Chapter 7. Syntax highlighting"><img class="navigation-icon" src="resources/next.png" alt="Next page" width="16" height="16" /></a></td>
+               <td align="right" valign="top"><a href="manual-8.html" class="navigation-link" title="Last page: Index"><img class="navigation-icon" src="resources/last.png" alt="Last page" width="16" height="16" /></a></td>
+            </tr>
+         </table>
+      </div>
+      <div id="bgcolor" xml:lang="en-US" lang="en-US" class="topic">
+         <h2 class="chapter-title">Chapter 6. Giving a background color to table cells</h2>
+         <p class="shortdesc">This chapter explains how you can give a background color to
+            table cells by adding a <tt class="tt">bgcolor(<i class="i">color</i>)</tt> directive to the
+            <code class="xmlatt">@outputclass</code> attribute of most table elements.
+         </p>
+         <div class="body">
+            <div class="p">It's possible to give a background color to table
+               cells<a id="bgcolor__I_89hviz_" name="bgcolor__I_89hviz_"></a> by adding a
+               <tt class="tt">bgcolor(<i class="i">color</i>)</tt> directive, where <i class="i">color</i> is any CSS
+               color value, to the <code class="xmlatt">@outputclass</code> attribute of the
+               following elements:
+            </div>
+            <dl class="dl">
+               <dt class="dt">Inside a <code class="xmlelement">&lt;simpletable&gt;</code> element
+               </dt>
+               <dd class="dd"><code class="xmlelement">&lt;simpletable&gt;</code>,
+                  <code class="xmlelement">&lt;sthead&gt;</code>, <code class="xmlelement">&lt;strow&gt;</code>,
+                  <code class="xmlelement">&lt;stentry&gt;</code>.
+               </dd>
+               <dt class="dt">Inside a <code class="xmlelement">&lt;table&gt;</code> element
+               </dt>
+               <dd class="dd"><code class="xmlelement">&lt;tgroup&gt;</code>, <code class="xmlelement">&lt;thead&gt;</code>,
+                  <code class="xmlelement">&lt;tbody&gt;</code>, <code class="xmlelement">&lt;row&gt;</code>,
+                  <code class="xmlelement">&lt;entry&gt;</code>.
+               </dd>
+            </dl>
+            <div class="p">Example:</div><pre class="pre language-xml"><span class="hl-tag">&lt;table&gt;</span>
+  <span class="hl-tag">&lt;tgroup</span> <span class="hl-attribute">cols</span>=<span class="hl-value">"2"</span> <b class="b">outputclass="bgcolor(#F0FFFF)"</b>&gt;
+    <span class="hl-tag">&lt;tbody&gt;</span>
+      <span class="hl-tag">&lt;row&gt;</span>
+        <span class="hl-tag">&lt;entry&gt;</span>C1,1<span class="hl-tag">&lt;/entry&gt;</span>
+        <span class="hl-tag">&lt;entry&gt;</span>C1,2<span class="hl-tag">&lt;/entry&gt;</span>
+      <span class="hl-tag">&lt;/row&gt;</span>
+      <span class="hl-tag">&lt;row </span><b class="b">outputclass="bgcolor(#FFFFF0)"</b>&gt;
+        <span class="hl-tag">&lt;entry&gt;</span>C2,1<span class="hl-tag">&lt;/entry&gt;</span>
+        <span class="hl-tag">&lt;entry&gt;</span>C2,2<span class="hl-tag">&lt;/entry&gt;</span>
+      <span class="hl-tag">&lt;/row&gt;</span>
+    <span class="hl-tag">&lt;/tbody&gt;</span>
+  <span class="hl-tag">&lt;/tgroup&gt;</span>
+<span class="hl-tag">&lt;/table&gt;</span></pre><div class="p">Note that it is still possible to specify any class name you want in
+               the <code class="xmlatt">@outputclass</code> attribute of a table element. Example:
+               <code class="codeph">&lt;simpletable outputclass="bgcolor(#FFFFF0)
+                  fancy-table"&gt;</code>.
+            </div>
+         </div>
+         <div class="unordered-members-linkpool">
+            <p class="link">‣ <span class="parent-topic-link-item">Parent topic: </span><a href="manual-3.html#I_z3dsw8_">Part I. Using XMLmind DITA Converter</a></p>
+         </div>
+      </div>
+      <div class="page-navigation-footer">
+         <table class="page-navigation-layout" width="100%">
+            <tr>
+               <td align="left" valign="top"><a href="index.html" class="navigation-link" title="First page: XMLmind DITA Converter Manual"><img class="navigation-icon" src="resources/first.png" alt="First page" width="16" height="16" /></a></td>
+               <td align="left" valign="top"><a href="olNumbering.html" class="navigation-link" title="Previous page: Part I, Chapter 5. Controlling the numbering of ordered lists"><img class="navigation-icon" src="resources/previous.png" alt="Previous page" width="16" height="16" /></a></td>
+               <td width="25%" align="left" valign="top"><span class="page-navigation-previous">Part I, Chapter 5. Controlling the numbering of ordered lists</span></td>
+               <td width="40%" align="center" valign="top"><span class="page-navigation-current">Part I, Chapter 6. Giving a background color to table cells</span> <span class="page-navigation-page">(12 / 25)</span></td>
+               <td width="25%" align="right" valign="top"><span class="page-navigation-next">Part I, Chapter 7. Syntax highlighting</span></td>
+               <td align="right" valign="top"><a href="syntaxHighlighting.html" class="navigation-link" title="Next page: Part I, Chapter 7. Syntax highlighting"><img class="navigation-icon" src="resources/next.png" alt="Next page" width="16" height="16" /></a></td>
+               <td align="right" valign="top"><a href="manual-8.html" class="navigation-link" title="Last page: Index"><img class="navigation-icon" src="resources/last.png" alt="Last page" width="16" height="16" /></a></td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

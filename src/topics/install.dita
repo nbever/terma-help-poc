@@ -2,7 +2,7 @@
 <!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
 "topic.dtd">
 <topic id="install">
-  <title>4 Steps to Nirvana</title>
+  <title outputclass="rad">4 Steps to Nirvana</title>
 
   <body>
     <p>Now that you have confirmed the status of your system, it's time to

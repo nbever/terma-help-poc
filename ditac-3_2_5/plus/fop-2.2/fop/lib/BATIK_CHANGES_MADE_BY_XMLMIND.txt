@@ -1,0 +1,98 @@
+Compiled Batik 1.9 with the following changes. Ran: mvn clean install
+(Use j7 to run it but will compile using j6 thanks to maven/conf/toolchains.xml)
+
+* Fixes Batik bug BATIK-1090; 
+Embedded SVG reports "Content is not allowed in prolog".
+See https://issues.apache.org/jira/browse/BATIK-1090
+
+batik-util/src/main/java/org/apache/batik/util/
+===============================================================
+--- ParsedURLDataProtocolHandler.java.ORI	2017-03-17 16:56:20.000000000 +0100
++++ ParsedURLDataProtocolHandler.java	2017-05-03 10:31:51.557662279 +0200
+@@ -43,8 +43,16 @@
+     }
+ 
+     public ParsedURLData parseURL(ParsedURL baseURL, String urlStr) {
+-        // No relative form...
+-        return parseURL(urlStr);
++        if (urlStr != null && urlStr.startsWith("#") && 
++            baseURL != null && "data".equals(baseURL.data.protocol)) {
++            // No relative form per se. Just record this ref in a copy of the
++            // base DataParsedURLData.
++            DataParsedURLData ret = ((DataParsedURLData) baseURL.data).copy();
++            ret.ref = urlStr.substring(1);
++            return ret;
++        } else {
++            return parseURL(urlStr);
++        }
+     }
+ 
+     public ParsedURLData parseURL(String urlStr) {
+@@ -129,6 +137,21 @@
+ 
+         String charset;
+ 
++        public DataParsedURLData copy() {
++            DataParsedURLData copy = new DataParsedURLData();
++
++            copy.protocol = protocol;
++            copy.host = host;
++            copy.port = port;
++            copy.path = path;
++            copy.ref = ref;
++            copy.contentType = contentType;
++            copy.contentEncoding = contentEncoding;
++            copy.charset = charset;
++
++            return copy;
++        }
++
+         public boolean complete() {
+             return path != null;
+         }
+===============================================================
+
+* In order to make the code run on Java 9 without NoClassDefFoundError, 
+replaced all the following org.w3c.dom.XXX references by 
+org.w3c.dom3.XXX references.
+
+Java 9 does not support having the  org.w3c.dom and org.w3c.dom.events packages
+split between two modules: "unamed" module, batik-all.jar (or batik-ext.jar) 
+found in $CLASSPATH and Java 9's "java.xml" module.
+
+org.w3c.dom.ElementTraversal
+===============================================================
+batik-dom/src/main/java/org/apache/batik/dom/AbstractElement.java
+test-sources/org/apache/batik/dom/ElementTraversalTest.java
+
+org.w3c.dom.Window
+===============================================================
+batik-bridge/src/main/java/org/apache/batik/bridge/BaseScriptingEnvironment.java
+batik-bridge/src/main/java/org/apache/batik/bridge/Window.java
+batik-bridge/src/main/java/org/apache/batik/bridge/ScriptingEnvironment.java
+samples/tests/resources/java/sources/com/untrusted/script/UntrustedScriptHandler.java
+
+org.w3c.dom.Location
+===============================================================
+batik-bridge/src/main/java/org/apache/batik/bridge/Location.java
+batik-bridge/src/main/java/org/apache/batik/bridge/BaseScriptingEnvironment.java
+batik-bridge/src/main/java/org/apache/batik/bridge/WindowWrapper.java
+batik-bridge/src/main/java/org/apache/batik/bridge/ScriptingEnvironment.java
+
+org.w3c.dom.events.CustomEvent
+===============================================================
+batik-dom/src/main/java/org/apache/batik/dom/events/DOMCustomEvent.java
+
+org.w3c.dom.events.KeyboardEvent
+===============================================================
+batik-anim/src/main/java/org/apache/batik/anim/timing/AccesskeyTimingSpecifier.java
+batik-dom/src/main/java/org/apache/batik/dom/events/DOMKeyboardEvent.java
+
+org.w3c.dom.events.MutationNameEvent
+===============================================================
+batik-dom/src/main/java/org/apache/batik/dom/AbstractDocument.java
+batik-dom/src/main/java/org/apache/batik/dom/events/DOMMutationNameEvent.java
+
+org.w3c.dom.events.TextEvent
+===============================================================
+batik-dom/src/main/java/org/apache/batik/dom/events/DOMTextEvent.java

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"topic.dtd">
+<topic id="olNumbering">
+  <title>Controlling the numbering of ordered lists</title>
+
+  <shortdesc>This chapter explains how you can to control the numbering of
+  ordered lists by the means of one or more directives specified in the
+  <xmlatt>outputclass</xmlatt> attribute of the <xmlelement>ol</xmlelement>
+  element.</shortdesc>
+
+  <body>
+    <p>By default, the numbering of nested ordered lists automatically
+    alternates between the "<tt>1.</tt>" and "<tt>a.</tt>" formats. If you
+    want more control on the numbering of ordered lists<indexterm>ordered
+    list, numbering</indexterm>, then you'll have to specify one or more of
+    the following directives in the <xmlatt>outputclass</xmlatt> attribute of
+    the <xmlelement>ol</xmlelement> element.</p>
+
+    <dl>
+      <dlentry>
+        <dt><tt>lower-alpha</tt></dt>
+
+        <dt><tt>upper-alpha</tt></dt>
+
+        <dt><tt>lower-roman</tt></dt>
+
+        <dt><tt>upper-roman</tt></dt>
+
+        <dt><tt>decimal</tt></dt>
+
+        <dd>Specifies the style of numbering.</dd>
+      </dlentry>
+
+      <dlentry>
+        <dt><tt>start(<i>positive_integer</i>)</tt></dt>
+
+        <dd>Numbering begins at specified <i>positive_integer</i>.</dd>
+      </dlentry>
+
+      <dlentry>
+        <dt><tt>continue</tt></dt>
+
+        <dd>Numbering begins where the preceding ordered list left off.</dd>
+      </dlentry>
+    </dl>
+
+    <p>Example: <codeph>&lt;ol outputclass="upper-roman
+    start(10)"&gt;</codeph> specifies an ordered list which starts with an
+    "<tt>X.</tt>".</p>
+
+    <p>Note that it is still possible to specify any class name you want in
+    the <xmlatt>outputclass</xmlatt> attribute of the
+    <xmlelement>ol</xmlelement> element. Example: <codeph>&lt;ol
+    outputclass="continue fancy-list"&gt;</codeph>.</p>
+  </body>
+</topic>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Appendix A. About DITA support in XMLmind DITA Converter</title>
+      <link rel="stylesheet" type="text/css" href="resources/basic.css" />
+      <meta name="generator" content="XMLmind DITA Converter 3.2.5" />
+   </head>
+   <body>
+      <div class="page-navigation-header">
+         <table class="page-navigation-layout" width="100%">
+            <tr>
+               <td align="left" valign="top"><a href="index.html" class="navigation-link" title="First page: XMLmind DITA Converter Manual"><img class="navigation-icon" src="resources/first.png" alt="First page" width="16" height="16" /></a></td>
+               <td align="left" valign="top"><a href="embed2.html" class="navigation-link" title="Previous page: Part III, Chapter 13. Low-level method: embedding com.xmlmind.ditac.preprocess.PreProcessor"><img class="navigation-icon" src="resources/previous.png" alt="Previous page" width="16" height="16" /></a></td>
+               <td width="25%" align="left" valign="top"><span class="page-navigation-previous">Part III, Chapter 13. Low-level method: embedding com.xmlmind.ditac.preprocess.PreProcessor</span></td>
+               <td width="40%" align="center" valign="top"><span class="page-navigation-current">Appendix A. About DITA support in XMLmind DITA Converter</span> <span class="page-navigation-page">(22 / 25)</span></td>
+               <td width="25%" align="right" valign="top"><span class="page-navigation-next">Appendix B. Limitations and implementation specificities</span></td>
+               <td align="right" valign="top"><a href="limitations.html" class="navigation-link" title="Next page: Appendix B. Limitations and implementation specificities"><img class="navigation-icon" src="resources/next.png" alt="Next page" width="16" height="16" /></a></td>
+               <td align="right" valign="top"><a href="manual-8.html" class="navigation-link" title="Last page: Index"><img class="navigation-icon" src="resources/last.png" alt="Last page" width="16" height="16" /></a></td>
+            </tr>
+         </table>
+      </div>
+      <div id="dita_support" xml:lang="en-US" lang="en-US" class="topic">
+         <h2 class="appendix-title">Appendix A. About DITA support in XMLmind DITA Converter</h2>
+         <div class="body">
+            <div id="dita_support__I_z8vwb2_" class="section">
+               <h3 class="section-title">DITA 1.3 support</h3>
+               <div class="p">As of version 3.0, XMLmind DITA
+                  Converter (ditac for short) fully supports <a href="http://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/dita-v1.3-os-part2-tech-content.html" class="xref" target="_blank">DITA 1.3 <img border="0" src="resources/new_window.png" alt="Opens in new window" width="10" height="10" /></a> and as such, allows to convert DITA
+                  documents conforming to the DITA 1.3 DTD, W3C XML Schema or <i class="i">RELAX NG
+                     schema</i>. However, there are still limitations, deemed minor, and
+                  implementation specificities which are documented in <a href="limitations.html#limitations" class="xref">Appendix B</a>.
+               </div>
+               <div class="p">In fact, when ditac v2.6+ is used, DITA
+                  1.2 documents are automatically “upgraded” to DITA 1.3. This is caused by
+                  the fact that the following <code class="codeph">&lt;!DOCTYPE&gt;</code> means "use
+                  latest version of the DITA DTD":
+               </div><pre id="dita_support__MyTopic_dtd" class="pre language-xml"><span class="hl-directive">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<b class="b">&lt;!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd"&gt;</b>
+<span class="hl-tag">&lt;topic</span> <span class="hl-attribute">id</span>=<span class="hl-value">"MyTopic"</span><span class="hl-tag">&gt;</span>
+...
+<span class="hl-tag">&lt;/topic&gt;</span></pre><div class="p">This should not be a problem as DITA 1.3 is a superset
+                  of DITA 1.2.
+               </div>
+            </div>
+            <div id="dita_support__I_vamt4n_" class="section">
+               <h3 class="section-title">Technical content only</h3>
+               <div class="p">Ditac only supports
+                  "<a href="http://docs.oasis-open.org/dita/dita/v1.3/dita-v1.3-part2-tech-content.html" class="xref" target="_blank">Technical content elements <img border="0" src="resources/new_window.png" alt="Opens in new window" width="10" height="10" /></a>". However <a href="http://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/langRef/containers/classification-elements.html" class="xref" target="_blank">Classification elements <img border="0" src="resources/new_window.png" alt="Opens in new window" width="10" height="10" /></a> (e.g. <a href="http://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/archSpec/base/subject-scheme-maps-and-usage.html" class="xref" target="_blank">subject scheme maps <img border="0" src="resources/new_window.png" alt="Opens in new window" width="10" height="10" /></a>) are still not
+                  supported.
+               </div>
+            </div>
+            <div id="dita_support__I_rzlzoj_" class="section">
+               <h3 class="section-title">DITA 1.3 RELAX NG schema</h3>
+               <div class="p">Ditac has no problem
+                  processing a DITA document pointing to a RELAX NG schema, rather than to a
+                  DTD or W3C XML Schema:
+               </div><pre id="dita_support__MyTopic_rng" class="pre language-xml"><span class="hl-directive">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<b class="b">&lt;?xml-model href="urn:oasis:names:tc:dita:rng:topic.rng"?&gt;</b>
+<span class="hl-tag">&lt;topic</span> <span class="hl-attribute">id</span>=<span class="hl-value">"MyTopic"</span><span class="hl-tag">&gt;</span>
+...
+<span class="hl-tag">&lt;/topic&gt;</span></pre><div class="p">The <code class="xmlpi">&lt;?xml-model?&gt;</code> processing-instruction
+                  used in the above example is the standard way to associate a document to a
+                  RELAX NG schema. See <a href="https://www.w3.org/TR/xml-model/" class="xref" target="_blank">"<cite class="cite">Associating Schemas with XML documents
+                        1.0</cite>" <img border="0" src="resources/new_window.png" alt="Opens in new window" width="10" height="10" /></a>.
+               </div>
+            </div>
+            <div id="dita_support__I_s093nb_" class="section">
+               <h3 class="section-title">The <code class="cmdname">DTDToSchema</code> facility
+               </h3>
+               <div class="p">The
+                  <code class="cmdname">DTDToSchema</code> facility can be used to “upgrade” your
+                  documents conforming to a DITA 1.3 DTD to the equivalent DITA 1.3 W3C XML
+                  Schema or RELAX NG schema. Command-line example showing how to invoke the
+                  <code class="cmdname">DTDToSchema</code> facility:
+               </div><pre class="screen">$ java -cp <i class="i">ditac_install_dir</i>/lib/ditac.jar <b class="b">com.xmlmind.ditac.tool.DTDToSchema</b>¬
+-rng MyTopic.dita</pre><div class="p">Before invoking the
+                  <code class="cmdname">DTDToSchema</code> facility, <code class="filepath">MyTopic.dita</code>
+                  contained:
+               </div><pre class="pre language-xml"><span class="hl-directive">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<b class="b">&lt;!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd"&gt;</b>
+<span class="hl-tag">&lt;topic</span> <span class="hl-attribute">id</span>=<span class="hl-value">"MyTopic"</span><span class="hl-tag">&gt;</span>
+...
+<span class="hl-tag">&lt;/topic&gt;</span></pre><div class="p">After invoking
+                  the <code class="cmdname">DTDToSchema</code> facility,
+                  <code class="filepath">MyTopic.dita</code> contains:
+               </div><pre class="pre language-xml"><span class="hl-directive">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<b class="b">&lt;?xml-model href="urn:oasis:names:tc:dita:rng:topic.rng"?&gt;</b>
+<span class="hl-tag">&lt;topic</span> <span class="hl-attribute">id</span>=<span class="hl-value">"MyTopic"</span><span class="hl-tag">&gt;</span>
+...
+<span class="hl-tag">&lt;/topic&gt;</span></pre><div class="p">The <code class="cmdname">DTDToSchema</code>
+                  facility is auto-documented:
+               </div><pre class="screen">$ java -cp ditac_install_dir/lib/ditac.jar com.xmlmind.ditac.tool.DTDToSchema
+
+Usage: java -cp ditac.jar com.xmlmind.ditac.tool.DTDToSchema
+  -rng|-xsd [ in_dita_file|in_dir_containing_dita_files ]+
+
+"Upgrades" specified DITA documents conforming to a standard
+DITA 1.3 DTD to the corresponding W3C XML schema or
+RELAX NG schema.
+
+Processes files or directories. Files are modified in place.
+Directories are recursively processed. All the '.ditamap', '.dita'
+and '.ditaval' files found in specified directories are processed.
+
+Options:
+-rng Upgrade to RELAX NG schema.
+-xsd Upgrade to W3C XML schema.</pre></div>
+         </div>
+         <div class="related-links">
+            <h3 class="related-links-title">Related information</h3>
+            <p class="link">‣ <a href="limitations.html#limitations">Appendix B. Limitations and implementation specificities</a></p>
+         </div>
+      </div>
+      <div class="page-navigation-footer">
+         <table class="page-navigation-layout" width="100%">
+            <tr>
+               <td align="left" valign="top"><a href="index.html" class="navigation-link" title="First page: XMLmind DITA Converter Manual"><img class="navigation-icon" src="resources/first.png" alt="First page" width="16" height="16" /></a></td>
+               <td align="left" valign="top"><a href="embed2.html" class="navigation-link" title="Previous page: Part III, Chapter 13. Low-level method: embedding com.xmlmind.ditac.preprocess.PreProcessor"><img class="navigation-icon" src="resources/previous.png" alt="Previous page" width="16" height="16" /></a></td>
+               <td width="25%" align="left" valign="top"><span class="page-navigation-previous">Part III, Chapter 13. Low-level method: embedding com.xmlmind.ditac.preprocess.PreProcessor</span></td>
+               <td width="40%" align="center" valign="top"><span class="page-navigation-current">Appendix A. About DITA support in XMLmind DITA Converter</span> <span class="page-navigation-page">(22 / 25)</span></td>
+               <td width="25%" align="right" valign="top"><span class="page-navigation-next">Appendix B. Limitations and implementation specificities</span></td>
+               <td align="right" valign="top"><a href="limitations.html" class="navigation-link" title="Next page: Appendix B. Limitations and implementation specificities"><img class="navigation-icon" src="resources/next.png" alt="Next page" width="16" height="16" /></a></td>
+               <td align="right" valign="top"><a href="manual-8.html" class="navigation-link" title="Last page: Index"><img class="navigation-icon" src="resources/last.png" alt="Last page" width="16" height="16" /></a></td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

@@ -3,7 +3,8 @@
 "bookmap.dtd">
 <bookmap>
   <title><image align="center" href="assets/terma-software-logo.png"
-  placement="break" width="200px"/><text>Online Help</text></title>
+  placement="break" width="200px"/><text class="titletext"
+  id="onlinehelp">Online Help</text></title>
 
   <frontmatter>
     <booklists>
@@ -11,20 +12,17 @@
     </booklists>
   </frontmatter>
 
-  <chapter href="../../../../../home/nbever/Projects/terma-help-poc/src/topics/installation.dita"
-           navtitle="Installation">
-    <topicref href="../../../../../home/nbever/Projects/terma-help-poc/src/topics/machine_requirements.dita"
+  <chapter href="topics/installation.dita" navtitle="Installation"
+           outputclass="onlinehelp">
+    <topicref href="topics/machine_requirements.dita"
               navtitle="System Requirements"/>
 
-    <topicref href="../../../../../home/nbever/Projects/terma-help-poc/src/topics/pre_req.dita"
-              navtitle="Preparation"/>
+    <topicref href="topics/pre_req.dita" navtitle="Preparation"/>
 
-    <topicref href="../../../../../home/nbever/Projects/terma-help-poc/src/topics/install.dita"
-              navtitle="Install Steps"/>
+    <topicref href="topics/install.dita" navtitle="Install Steps"/>
   </chapter>
 
-  <appendix href="../../../../../home/nbever/Projects/terma-help-poc/src/topics/appendix.dita"
-            navtitle="Reference"/>
+  <appendix href="topics/appendix.dita" navtitle="Reference"/>
 
   <backmatter>
     <booklists>

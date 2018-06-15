@@ -1,0 +1,13 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta><title>Controlling the numbering of ordered lists</title><link rel="stylesheet" type="text/css" href="resources/eclipsehelp.css"></link><meta name="description" content="This chapter explains how you can to control the numbering of ordered lists by the means of one or more directives specified in the outputclass attribute of the ol element."></meta><meta name="generator" content="XMLmind DITA Converter 3.2.5"></meta></head><body><div id="olNumbering" xml:lang="en-US" lang="en-US" class="topic"><h2 class="chapter-title">Controlling the numbering of ordered lists</h2><p class="shortdesc">This chapter explains how you can to control the numbering of
+  ordered lists by the means of one or more directives specified in the
+  <code class="xmlatt">@outputclass</code> attribute of the <code class="xmlelement">&lt;ol&gt;</code>
+  element.</p><div class="body"><div class="p">By default, the numbering of nested ordered lists automatically
+    alternates between the "<tt class="tt">1.</tt>" and "<tt class="tt">a.</tt>" formats. If you
+    want more control on the numbering of ordered lists<a id="olNumbering__I_34lem5_" name="olNumbering__I_34lem5_"></a>, then you'll have to specify one or more of
+    the following directives in the <code class="xmlatt">@outputclass</code> attribute of
+    the <code class="xmlelement">&lt;ol&gt;</code> element.</div><dl class="dl"><dt class="dt"><tt class="tt">lower-alpha</tt></dt><dt class="dt"><tt class="tt">upper-alpha</tt></dt><dt class="dt"><tt class="tt">lower-roman</tt></dt><dt class="dt"><tt class="tt">upper-roman</tt></dt><dt class="dt"><tt class="tt">decimal</tt></dt><dd class="dd">Specifies the style of numbering.</dd><dt class="dt"><tt class="tt">start(<i class="i">positive_integer</i>)</tt></dt><dd class="dd">Numbering begins at specified <i class="i">positive_integer</i>.</dd><dt class="dt"><tt class="tt">continue</tt></dt><dd class="dd">Numbering begins where the preceding ordered list left off.</dd></dl><div class="p">Example: <code class="codeph">&lt;ol outputclass="upper-roman
+    start(10)"&gt;</code> specifies an ordered list which starts with an
+    "<tt class="tt">X.</tt>".</div><div class="p">Note that it is still possible to specify any class name you want in
+    the <code class="xmlatt">@outputclass</code> attribute of the
+    <code class="xmlelement">&lt;ol&gt;</code> element. Example: <code class="codeph">&lt;ol
+    outputclass="continue fancy-list"&gt;</code>.</div></div></div></body></html>

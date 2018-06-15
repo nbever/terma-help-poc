@@ -2,8 +2,9 @@
 <!DOCTYPE bookmap PUBLIC "-//OASIS//DTD DITA BookMap//EN"
 "bookmap.dtd">
 <bookmap>
-  <title><image href="assets/terma-software-logo.png" width="-"/>Terma Online
-  Help</title>
+  <title><image align="center" href="assets/terma-software-logo.png"
+  placement="break" width="200px"/><text class="titletext"
+  id="onlinehelp">Online Help</text></title>
 
   <frontmatter>
     <booklists>
@@ -12,7 +13,7 @@
   </frontmatter>
 
   <chapter href="../../../../../home/nbever/Projects/terma-help-poc/src/topics/installation.dita"
-           navtitle="Installation">
+           navtitle="Installation" outputclass="onlinehelp">
     <topicref href="../../../../../home/nbever/Projects/terma-help-poc/src/topics/machine_requirements.dita"
               navtitle="System Requirements"/>
 

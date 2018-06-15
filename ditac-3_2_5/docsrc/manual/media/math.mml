@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xs="http://www.w3.org/2001/XMLSchema"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:ns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mrow>
+      <mi>∇</mi>
+      <mo>⁣</mo>
+      <mi mathvariant="bold">E</mi>
+    </mrow>
+    <mo>=</mo>
+    <mfrac>
+      <mi>ρ</mi>
+      <msub>
+        <mi>ε</mi>
+        <mn>0</mn>
+      </msub>
+    </mfrac>
+  </mrow>
+</math>

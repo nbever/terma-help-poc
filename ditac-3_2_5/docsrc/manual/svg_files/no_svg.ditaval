@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<val
+><prop
+action="exclude"
+att="otherprops"
+></prop
+><prop
+action="include"
+att="otherprops"
+val="svg=no"
+></prop
+><prop
+action="exclude"
+att="product"
+></prop
+><prop
+action="include"
+att="product"
+val="ditac"
+></prop
+></val
+>

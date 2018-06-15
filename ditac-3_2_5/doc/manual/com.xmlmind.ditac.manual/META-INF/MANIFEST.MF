@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Bundle-Name: XMLmind DITA Converter Manual
+Bundle-SymbolicName:com.xmlmind.ditac.manual
+Bundle-Vendor: XMLmind
+Bundle-Version: 3.2.5

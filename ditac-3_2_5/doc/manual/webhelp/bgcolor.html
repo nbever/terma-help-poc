@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head><meta charset="UTF-8" />
+      
+      <title>Part I, Chapter 6. Giving a background color to table cells</title>
+      <link href="resources/webhelp.css" rel="stylesheet" type="text/css" />
+      <meta content="This chapter explains how you can give a background color to table cells by adding a bgcolor(color) directive to the outputclass attribute of most table elements." name="description" />
+      <meta content="XMLmind DITA Converter 3.2.5" name="generator" />
+   <script charset="UTF-8" defer="defer" src="_wh/snowball_en.min.js" type="text/javascript"></script><link href="_wh/jquery/jquery-ui.css" rel="stylesheet" type="text/css" /><link href="_wh/wh.css" rel="stylesheet" type="text/css" /><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript">
+    </script><script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript">
+    </script><script charset="UTF-8" src="_wh/wh.min.js" type="text/javascript">
+    </script><script charset="UTF-8" defer="defer" src="_wh/search.js" type="text/javascript">
+    </script><link href="_wh/user/header_footer.css" rel="stylesheet" type="text/css" /></head>
+   
+<body>
+    <div id="wh-header">
+    <table id="page-header" style="border-spacing: 0; width: 100%;">
+      <tr>
+        <td style="vertical-align: middle; width: 110px;"><a href="http://www.xmlmind.com/"><img alt="XMLmind logo" height="50" src="_wh/user/header_footer_files/logo100x50.png" style="border-style: none;" width="100" /></a></td>
+
+        <td style="vertical-align: middle;"><h1 id="page-header-title">XMLmind
+        DITA Converter Manual</h1></td>
+
+        <td style="vertical-align: middle; width: 110px;"> </td>
+      </tr>
+    </table></div>
+
+    <div id="wh-body">
+      <div id="wh-navigation">
+        <ul id="wh-tabs">
+          <li id="wh-toc-tab"><a href="#wh-toc-pane"><span>Contents</span></a></li>
+          <li id="wh-index-tab"><a href="#wh-index-pane"><span>Index</span></a></li>
+          <li id="wh-search-tab"><a href="#wh-search-pane"><span>Search</span></a></li>
+        </ul>
+        <div id="wh-toc-pane">
+          <div id="wh-toc-form">
+            <span id="wh-toc-control"><a href="#">Collapse 
+            All</a><a href="#">Expand All</a></span>
+            <button id="wh-toc-previous">Previous</button>
+            <button id="wh-toc-next">Next</button>
+            <button id="wh-toc-print">Print</button>
+          </div>
+          <script charset="UTF-8" src="_wh/toc.js" type="text/javascript">
+          </script>
+        </div>
+        <div id="wh-index-pane">
+          <div id="wh-index-form">
+            <input id="wh-index-field" type="text" />
+          </div>
+          <script charset="UTF-8" src="_wh/index.js" type="text/javascript">
+          </script>
+        </div>
+        <div id="wh-search-pane">
+          <div id="wh-search-form">
+            <input id="wh-search-field" type="text" /><button id="wh-search-button">Search</button><span id="wh-highlight-group"><input checked="checked" id="wh-highlight-toggle" type="checkbox" /><label for="wh-highlight-toggle" id="wh-highlight-icon"><span class="ui-icon ui-icon-flag"></span></label></span>
+          </div>
+          <div id="wh-search-results">
+          </div>
+        </div>
+      </div>
+      <div id="wh-separator">
+      </div>
+      <div id="wh-content">
+      
+      <section class="topic" id="bgcolor" lang="en-US" xml:lang="en-US">
+         <h2 class="chapter-title">Chapter 6. Giving a background color to table cells <span class="topic-navigation-bar"><a class="navigation-link" href="olNumbering.html#olNumbering" title="Previous topic: Chapter 5. Controlling the numbering of ordered lists"><img alt="Previous topic" class="navigation-icon" height="16" src="resources/previous.png" width="16" /></a> <a class="navigation-link" href="manual-3.html#I_iqcw1s_" title="Parent topic: Part I. Using XMLmind DITA Converter"><img alt="Parent topic" class="navigation-icon" height="16" src="resources/parent.png" width="16" /></a> <img alt="Child topic" class="navigation-icon-disabled" height="16" src="resources/child_disabled.png" title="Child topic" width="16" /> <a class="navigation-link" href="syntaxHighlighting.html#syntaxHighlighting" title="Next topic: Chapter 7. Syntax highlighting"><img alt="Next topic" class="navigation-icon" height="16" src="resources/next.png" width="16" /></a></span></h2>
+         <p class="shortdesc">This chapter explains how you can give a background color to
+            table cells by adding a <span class="tt">bgcolor(<i class="i">color</i>)</span> directive to the
+            <code class="xmlatt">@outputclass</code> attribute of most table elements.
+         </p>
+         <div class="body">
+            <div class="p">It's possible to give a background color to table
+               cells<a id="bgcolor__I_rdnmpc_"></a> by adding a
+               <span class="tt">bgcolor(<i class="i">color</i>)</span> directive, where <i class="i">color</i> is any CSS
+               color value, to the <code class="xmlatt">@outputclass</code> attribute of the
+               following elements:
+            </div>
+            <dl class="dl">
+               <dt class="dt">Inside a <code class="xmlelement">&lt;simpletable&gt;</code> element
+               </dt>
+               <dd class="dd"><code class="xmlelement">&lt;simpletable&gt;</code>,
+                  <code class="xmlelement">&lt;sthead&gt;</code>, <code class="xmlelement">&lt;strow&gt;</code>,
+                  <code class="xmlelement">&lt;stentry&gt;</code>.
+               </dd>
+               <dt class="dt">Inside a <code class="xmlelement">&lt;table&gt;</code> element
+               </dt>
+               <dd class="dd"><code class="xmlelement">&lt;tgroup&gt;</code>, <code class="xmlelement">&lt;thead&gt;</code>,
+                  <code class="xmlelement">&lt;tbody&gt;</code>, <code class="xmlelement">&lt;row&gt;</code>,
+                  <code class="xmlelement">&lt;entry&gt;</code>.
+               </dd>
+            </dl>
+            <div class="p">Example:</div><pre class="pre language-xml"><span class="hl-tag">&lt;table&gt;</span>
+  <span class="hl-tag">&lt;tgroup</span> <span class="hl-attribute">cols</span>=<span class="hl-value">&quot;2&quot;</span> <b class="b">outputclass=&quot;bgcolor(#F0FFFF)&quot;</b>&gt;
+    <span class="hl-tag">&lt;tbody&gt;</span>
+      <span class="hl-tag">&lt;row&gt;</span>
+        <span class="hl-tag">&lt;entry&gt;</span>C1,1<span class="hl-tag">&lt;/entry&gt;</span>
+        <span class="hl-tag">&lt;entry&gt;</span>C1,2<span class="hl-tag">&lt;/entry&gt;</span>
+      <span class="hl-tag">&lt;/row&gt;</span>
+      <span class="hl-tag">&lt;row </span><b class="b">outputclass=&quot;bgcolor(#FFFFF0)&quot;</b>&gt;
+        <span class="hl-tag">&lt;entry&gt;</span>C2,1<span class="hl-tag">&lt;/entry&gt;</span>
+        <span class="hl-tag">&lt;entry&gt;</span>C2,2<span class="hl-tag">&lt;/entry&gt;</span>
+      <span class="hl-tag">&lt;/row&gt;</span>
+    <span class="hl-tag">&lt;/tbody&gt;</span>
+  <span class="hl-tag">&lt;/tgroup&gt;</span>
+<span class="hl-tag">&lt;/table&gt;</span></pre><div class="p">Note that it is still possible to specify any class name you want in
+               the <code class="xmlatt">@outputclass</code> attribute of a table element. Example:
+               <code class="codeph">&lt;simpletable outputclass=&quot;bgcolor(#FFFFF0)
+                  fancy-table&quot;&gt;</code>.
+            </div>
+         </div>
+      </section>
+   </div>
+    </div>
+
+    <div id="wh-footer">
+    <p id="page-footer">Web Help generated using <a href="http://www.xmlmind.com/ditac/" target="_blank">XMLmind DITA Converter</a>.</p></div>
+  </body></html>

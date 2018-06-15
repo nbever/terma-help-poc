@@ -1,0 +1,2 @@
+FROM jenkinsci/blueocean
+COPY ditac-3_2_5/ /opt/ditac

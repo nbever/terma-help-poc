@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Part I, Chapter 7. Syntax highlighting</title>
+      <link rel="stylesheet" type="text/css" href="resources/basic.css" />
+      <meta name="description" content="This chapter explains how you can automatically colorize the source code contained in pre, codeblock or any other element specializing pre." />
+      <meta name="generator" content="XMLmind DITA Converter 3.2.5" />
+   </head>
+   <body>
+      <div class="page-navigation-header">
+         <table class="page-navigation-layout" width="100%">
+            <tr>
+               <td align="left" valign="top"><a href="index.html" class="navigation-link" title="First page: XMLmind DITA Converter Manual"><img class="navigation-icon" src="resources/first.png" alt="First page" width="16" height="16" /></a></td>
+               <td align="left" valign="top"><a href="bgcolor.html" class="navigation-link" title="Previous page: Part I, Chapter 6. Giving a background color to table cells"><img class="navigation-icon" src="resources/previous.png" alt="Previous page" width="16" height="16" /></a></td>
+               <td width="25%" align="left" valign="top"><span class="page-navigation-previous">Part I, Chapter 6. Giving a background color to table cells</span></td>
+               <td width="40%" align="center" valign="top"><span class="page-navigation-current">Part I, Chapter 7. Syntax highlighting</span> <span class="page-navigation-page">(13 / 25)</span></td>
+               <td width="25%" align="right" valign="top"><span class="page-navigation-next">Part I, Chapter 8. Rich media content</span></td>
+               <td align="right" valign="top"><a href="media.html" class="navigation-link" title="Next page: Part I, Chapter 8. Rich media content"><img class="navigation-icon" src="resources/next.png" alt="Next page" width="16" height="16" /></a></td>
+               <td align="right" valign="top"><a href="manual-8.html" class="navigation-link" title="Last page: Index"><img class="navigation-icon" src="resources/last.png" alt="Last page" width="16" height="16" /></a></td>
+            </tr>
+         </table>
+      </div>
+      <div id="syntaxHighlighting" xml:lang="en-US" lang="en-US" class="topic">
+         <h2 class="chapter-title">Chapter 7. Syntax highlighting</h2>
+         <p class="shortdesc">This chapter explains how you can automatically colorize the
+            source code contained in <code class="xmlelement">&lt;pre&gt;</code>,
+            <code class="xmlelement">&lt;codeblock&gt;</code> or any other element specializing
+            <code class="xmlelement">&lt;pre&gt;</code>.
+         </p>
+         <div class="body">
+            <div class="p">You can automatically colorize the source code contained in
+               <code class="xmlelement">&lt;pre&gt;</code>, <code class="xmlelement">&lt;codeblock&gt;</code> or any
+               other element specializing <code class="xmlelement">&lt;pre&gt;</code>. This feature,
+               commonly called <dfn class="term">syntax highlighting</dfn>, has been implemented
+               using an open source software component called "<a href="https://sourceforge.net/projects/xslthl/" class="xref" target="_blank">XSLT
+                  syntax highlighting <img border="0" src="resources/new_window.png" alt="Opens in new window" width="10" height="10" /></a>".<a id="syntaxHighlighting__I_blnv5k_" name="syntaxHighlighting__I_blnv5k_"></a></div>
+            <div class="p">If you want to turn on syntax highlighting in a DITA document, suffice
+               to add attribute <code class="xmlatt">@outputclass</code> to a
+               <code class="xmlelement">&lt;pre&gt;</code>, <code class="xmlelement">&lt;codeblock&gt;</code> or any
+               other element specializing <code class="xmlelement">&lt;pre&gt;</code>. The value of
+               attribute <code class="xmlatt">@outputclass</code> must be any of:
+               <code class="codeph">language-bourne</code>, <code class="codeph">language-c</code>,
+               <code class="codeph">language-cmake</code>, <code class="codeph">language-cpp</code>,
+               <code class="codeph">language-csharp</code>, <code class="codeph">language-css21</code>,
+               <code class="codeph">language-delphi</code>, <code class="codeph">language-ini</code>,
+               <code class="codeph">language-java</code>, <code class="codeph">language-javascript</code>,
+               <code class="codeph">language-lua</code>, <code class="codeph">language-m2</code> (Modula 2),
+               <code class="codeph">language-perl</code>, <code class="codeph">language-php</code>,
+               <code class="codeph">language-python</code>, <code class="codeph">language-ruby</code>,
+               <code class="codeph">language-sql1999</code>, <code class="codeph">language-sql2003</code>,
+               <code class="codeph">language-sql92</code>, <code class="codeph">language-tcl</code>,
+               <code class="codeph">language-upc</code> (Unified Parallel C),
+               <code class="codeph">language-html</code>, <code class="codeph">language-xml</code>.
+            </div>
+            <div class="p">If you want to customize syntax highlighting for an HTML-based output
+               format (XHTML, EPUB, etc), then redefine any of the following CSS
+               styles:
+            </div>
+            <ul class="compact-ul">
+               <li class="li"><code class="codeph">.hl-keyword</code> (keywords of a programming
+                  language),
+               </li>
+               <li class="li"><code class="codeph">.hl-string</code> (string literal),
+               </li>
+               <li class="li"><code class="codeph">.hl-number</code> (number literal),
+               </li>
+               <li class="li"><code class="codeph">.hl-comment</code> (any type of comment),
+               </li>
+               <li class="li"><code class="codeph">.hl-doccomment</code> (comments used as documentation,
+                  i.e. javadoc, or xmldoc),
+               </li>
+               <li class="li"><code class="codeph">.hl-directive</code> (preprocessor directive or in XML, a
+                  processing-instruction),
+               </li>
+               <li class="li"><code class="codeph">.hl-annotation</code> (annotations or "attributes" as they
+                  are called in .NET),
+               </li>
+               <li class="li"><code class="codeph">.hl-tag</code> (XML tag, i.e. element name),
+               </li>
+               <li class="li"><code class="codeph">.hl-attribute</code> (XML attribute name),
+               </li>
+               <li class="li"><code class="codeph">.hl-value</code> (XML attribute value),
+               </li>
+               <li class="li"><code class="codeph">.hl-doctype</code> (<code class="codeph">&lt;!DOCTYPE&gt;</code> and
+                  all its content).
+               </li>
+            </ul>
+            <div id="syntaxHighlighting__I_hubg7s_" class="example">
+               <h3 class="example-title">Customization of the syntax highlighting of a keyword for
+                  HTML-based output formats
+               </h3><pre class="pre">.hl-keyword {
+    font-weight: bold;
+    color: #602060;
+}</pre></div>
+            <div class="p">How to use a custom CSS stylesheet is explained in <a href="manual-6.html#customCSS" class="xref">Part II, Chapter 9, Section 1</a>.
+            </div>
+            <div class="p">If you want to customize syntax highlighting for an XSL-FO-based output
+               format (PDF, RTF, etc), then redefine any of the following
+               <code class="xmlelement">&lt;attribute-set&gt;</code>s: <tt class="tt">hl-keyword</tt>,
+               <tt class="tt">hl-string</tt>, <tt class="tt">hl-number</tt>, <tt class="tt">hl-comment</tt>,
+               <tt class="tt">hl-doccomment</tt>, <tt class="tt">hl-directive</tt>, <tt class="tt">hl-annotation</tt>,
+               <tt class="tt">hl-tag</tt>, <tt class="tt">hl-attribute</tt>, <tt class="tt">hl-value</tt>,
+               <tt class="tt">hl-doctype</tt>.
+            </div>
+            <div id="syntaxHighlighting__I_ife54a_" class="example">
+               <h3 class="example-title">Customization of the syntax highlighting of a keyword for
+                  XSL-FO-based output formats
+               </h3><pre class="pre language-xml"><span class="hl-tag">&lt;xsl:attribute-set</span> <span class="hl-attribute">name</span>=<span class="hl-value">"hl-keyword"</span> <span class="hl-attribute">use-attribute-sets</span>=<span class="hl-value">"hl-style"</span><span class="hl-tag">&gt;</span>
+  <span class="hl-tag">&lt;xsl:attribute</span> <span class="hl-attribute">name</span>=<span class="hl-value">"font-weight"</span><span class="hl-tag">&gt;</span>bold<span class="hl-tag">&lt;/xsl:attribute&gt;</span>
+  <span class="hl-tag">&lt;xsl:attribute</span> <span class="hl-attribute">name</span>=<span class="hl-value">"color"</span><span class="hl-tag">&gt;</span>#602060<span class="hl-tag">&lt;/xsl:attribute&gt;</span>
+<span class="hl-tag">&lt;/xsl:attribute-set&gt;</span></pre></div>
+            <div class="p">How to use a custom XSLT stylesheet generating XSL-FO is explained in
+               <a href="manual-6.html#customAttributeSet" class="xref">Part II, Chapter 9, Section 2</a>.
+            </div>
+         </div>
+         <div class="unordered-members-linkpool">
+            <p class="link">‣ <span class="parent-topic-link-item">Parent topic: </span><a href="manual-3.html#I_z3dsw8_">Part I. Using XMLmind DITA Converter</a></p>
+         </div>
+      </div>
+      <div class="page-navigation-footer">
+         <table class="page-navigation-layout" width="100%">
+            <tr>
+               <td align="left" valign="top"><a href="index.html" class="navigation-link" title="First page: XMLmind DITA Converter Manual"><img class="navigation-icon" src="resources/first.png" alt="First page" width="16" height="16" /></a></td>
+               <td align="left" valign="top"><a href="bgcolor.html" class="navigation-link" title="Previous page: Part I, Chapter 6. Giving a background color to table cells"><img class="navigation-icon" src="resources/previous.png" alt="Previous page" width="16" height="16" /></a></td>
+               <td width="25%" align="left" valign="top"><span class="page-navigation-previous">Part I, Chapter 6. Giving a background color to table cells</span></td>
+               <td width="40%" align="center" valign="top"><span class="page-navigation-current">Part I, Chapter 7. Syntax highlighting</span> <span class="page-navigation-page">(13 / 25)</span></td>
+               <td width="25%" align="right" valign="top"><span class="page-navigation-next">Part I, Chapter 8. Rich media content</span></td>
+               <td align="right" valign="top"><a href="media.html" class="navigation-link" title="Next page: Part I, Chapter 8. Rich media content"><img class="navigation-icon" src="resources/next.png" alt="Next page" width="16" height="16" /></a></td>
+               <td align="right" valign="top"><a href="manual-8.html" class="navigation-link" title="Last page: Index"><img class="navigation-icon" src="resources/last.png" alt="Last page" width="16" height="16" /></a></td>
+            </tr>
+         </table>
+      </div>
+   </body>
+</html>

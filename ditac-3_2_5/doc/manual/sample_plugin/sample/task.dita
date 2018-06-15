@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"task.dtd">
+<task id="aTask">
+  <title>A task</title>
+
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>This <tt>cmd</tt> contains a <tt>kbd</tt> element <kbd>Ctrl+O</kbd> and 
+    a <tt>time</tt> element 
+    <time datetime="2015-12-17">December 17, 2015</time>.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"topic.dtd">
+<topic id="dita_support">
+  <title>About DITA support in XMLmind DITA Converter</title>
+
+  <body>
+    <section><title>DITA 1.3 support</title><p>As of version 3.0, XMLmind DITA
+    Converter (ditac for short) fully supports <xref format="html"
+    href="http://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/dita-v1.3-os-part2-tech-content.html"
+    scope="external">DITA 1.3</xref> and as such, allows to convert DITA
+    documents conforming to the DITA 1.3 DTD, W3C XML Schema or <i>RELAX NG
+    schema</i>. However, there are still limitations, deemed minor, and
+    implementation specificities which are documented in <xref
+    href="limitations.dita"/>.</p><p>In fact, when ditac v2.6+ is used, DITA
+    1.2 documents are automatically “upgraded” to DITA 1.3. This is caused by
+    the fact that the following <codeph>&lt;!DOCTYPE&gt;</codeph> means "use
+    latest version of the DITA DTD":</p><pre id="MyTopic_dtd"
+    outputclass="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<b>&lt;!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN" "topic.dtd"&gt;</b>
+&lt;topic id="MyTopic"&gt;
+...
+&lt;/topic&gt;</pre><p>This should not be a problem as DITA 1.3 is a superset
+    of DITA 1.2.</p></section>
+
+    <section><title>Technical content only</title><p>Ditac only supports
+    "<xref format="html"
+    href="http://docs.oasis-open.org/dita/dita/v1.3/dita-v1.3-part2-tech-content.html"
+    scope="external">Technical content elements</xref>". However <xref
+    format="html"
+    href="http://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/langRef/containers/classification-elements.html"
+    scope="external">Classification elements</xref> (e.g. <xref format="html"
+    href="http://docs.oasis-open.org/dita/dita/v1.3/os/part2-tech-content/archSpec/base/subject-scheme-maps-and-usage.html"
+    scope="external">subject scheme maps</xref>) are still not
+    supported.</p></section>
+
+    <section><title>DITA 1.3 RELAX NG schema</title><p>Ditac has no problem
+    processing a DITA document pointing to a RELAX NG schema, rather than to a
+    DTD or W3C XML Schema:</p><pre id="MyTopic_rng"
+    outputclass="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+<b>&lt;?xml-model href="urn:oasis:names:tc:dita:rng:topic.rng"?&gt;</b>
+&lt;topic id="MyTopic"&gt;
+...
+&lt;/topic&gt;</pre><p>The <xmlpi>xml-model</xmlpi> processing-instruction
+    used in the above example is the standard way to associate a document to a
+    RELAX NG schema. See <xref format="html"
+    href="https://www.w3.org/TR/xml-model/"
+    scope="external">"<cite>Associating Schemas with XML documents
+    1.0</cite>"</xref>.</p></section>
+
+    <section><title>The <cmdname>DTDToSchema</cmdname> facility</title><p>The
+    <cmdname>DTDToSchema</cmdname> facility can be used to “upgrade” your
+    documents conforming to a DITA 1.3 DTD to the equivalent DITA 1.3 W3C XML
+    Schema or RELAX NG schema. Command-line example showing how to invoke the
+    <cmdname>DTDToSchema</cmdname> facility:</p><screen>$ java -cp <i>ditac_install_dir</i>/lib/ditac.jar <b>com.xmlmind.ditac.tool.DTDToSchema</b>¬
+-rng MyTopic.dita</screen><p>Before invoking the
+    <cmdname>DTDToSchema</cmdname> facility, <filepath>MyTopic.dita</filepath>
+    contained:</p><pre conref="#dita_support/MyTopic_dtd"/><p>After invoking
+    the <cmdname>DTDToSchema</cmdname> facility,
+    <filepath>MyTopic.dita</filepath> contains:</p><pre
+    conref="#dita_support/MyTopic_rng"/><p>The <cmdname>DTDToSchema</cmdname>
+    facility is auto-documented:</p><screen>$ java -cp ditac_install_dir/lib/ditac.jar com.xmlmind.ditac.tool.DTDToSchema
+
+Usage: java -cp ditac.jar com.xmlmind.ditac.tool.DTDToSchema
+  -rng|-xsd [ in_dita_file|in_dir_containing_dita_files ]+
+
+"Upgrades" specified DITA documents conforming to a standard
+DITA 1.3 DTD to the corresponding W3C XML schema or
+RELAX NG schema.
+
+Processes files or directories. Files are modified in place.
+Directories are recursively processed. All the '.ditamap', '.dita'
+and '.ditaval' files found in specified directories are processed.
+
+Options:
+-rng Upgrade to RELAX NG schema.
+-xsd Upgrade to W3C XML schema.</screen></section>
+  </body>
+</topic>

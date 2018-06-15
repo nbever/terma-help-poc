@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"topic.dtd">
+<topic id="aTopic">
+  <title>A topic</title>
+
+  <body>
+    <p>This paragraph contains a <tt>kbd</tt> element <kbd>Ctrl+O</kbd> and 
+    a <tt>time</tt> element 
+    <time datetime="2015-12-17">December 17, 2015</time>.</p>
+  </body>
+</topic>
