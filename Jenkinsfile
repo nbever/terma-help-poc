@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build Help Set') {
       steps {
-        build 'build-help-set'
+        build 'terma-help-docs'
       }
     }
   }
