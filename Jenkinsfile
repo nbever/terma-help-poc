@@ -6,5 +6,10 @@ pipeline {
         build 'terma-help-docs'
       }
     }
+    stage('Deploy') {
+      steps {
+        sh 'echo ${WORKSPACE}: ${GIT_BRANCH}'
+      }
+    }
   }
 }
