@@ -1,23 +1,28 @@
 pipeline {
   agent any
+  environment {
+    CI = 'true'
+  }
   stages {
     stage('Build Help Set') {
       steps {
-        build 'terma-help-docs'
+        sh 'build.sh'
       }
     }
-    stage('Deploy') {
+    stage('Deploy to Latest') {
+      when {
+        branch 'master'
+      }
       steps {
-        sh '''#!/bin/sh
-
-BRANCH = ${GIT_BRANCH}
-
-if [ $BRANCH = "master" ]
-then
-    BRANCH = `cat VERSION`
-fi
-
-cp -r /var/jenkins_home/workspace/terma-help-docs/dist /opt/termahelp/${BRANCH}'''
+        sh 'cp -r ./dist/* /opt/termahelp/latest'
+      }
+    }
+    stage('Deploy named version') {
+      when {
+        branch '^v*'
+      }
+      steps {
+       sh 'cp -r ./dist/* /opt/termahelp/${GIT_BRANCH}'
       }
     }
   }
