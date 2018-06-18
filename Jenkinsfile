@@ -1,12 +1,9 @@
 pipeline {
   agent any
-  environment {
-    CI = 'true'
-  }
   stages {
     stage('Build Help Set') {
       steps {
-        sh 'build.sh'
+        sh './build.sh'
       }
     }
     stage('Deploy to Latest') {
@@ -22,8 +19,11 @@ pipeline {
         branch '^v*'
       }
       steps {
-       sh 'cp -r ./dist/* /opt/termahelp/${GIT_BRANCH}'
+        sh 'cp -r ./dist/* /opt/termahelp/${GIT_BRANCH}'
       }
     }
+  }
+  environment {
+    CI = 'true'
   }
 }
