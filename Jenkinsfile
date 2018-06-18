@@ -4,6 +4,7 @@ pipeline {
     stage('Build Help Set') {
       steps {
         build 'terma-help-docs'
+        writeFile(file: 'build_info', text: '${WORKSPACE} ${GIT_BRANCH}')
       }
     }
     stage('Deploy') {
