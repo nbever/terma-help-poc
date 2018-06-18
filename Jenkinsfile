@@ -17,7 +17,7 @@ then
     BRANCH = `cat VERSION`
 fi
 
-cp -r ${WORKSPACE}/dist /opt/termahelp/${BRANCH}'''
+cp -r /var/jenkins_home/workspace/terma-help-docs/dist /opt/termahelp/${BRANCH}'''
       }
     }
   }
