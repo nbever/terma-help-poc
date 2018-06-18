@@ -4,7 +4,10 @@ pipeline {
     stage('Build Help Set') {
       steps {
         build 'terma-help-docs'
-        echo 'YES!'
+	writeFile {
+          file 'output_info'
+          text '${WORKSPACE} ${GIT_BRANCH}'
+	}
       }
     }
     stage('Deploy') {
