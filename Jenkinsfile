@@ -11,7 +11,8 @@ pipeline {
         branch 'master'
       }
       steps {
-        sh 'cp -r ./dist/* /opt/termahelp/latest'
+        sh 'mkdir -p /opt/termahelp/v5.7.3'
+        sh 'cp -r ./dist/* /opt/termahelp/v5.7.3'
       }
     }
     stage('Deploy named version') {
@@ -19,6 +20,7 @@ pipeline {
         branch '^v*'
       }
       steps {
+        sh 'mkdir -p /opt/termahelp/${GIT_BRANCH}'
         sh 'cp -r ./dist/* /opt/termahelp/${GIT_BRANCH}'
       }
     }
