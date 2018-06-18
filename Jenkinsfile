@@ -17,7 +17,7 @@ pipeline {
     }
     stage('Deploy named version') {
       when {
-        branch '^v*'
+        branch 'v*'
       }
       steps {
         sh 'mkdir -p /opt/termahelp/${GIT_BRANCH}'
