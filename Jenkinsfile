@@ -4,6 +4,7 @@ pipeline {
     stage('Build Help Set') {
       steps {
         build 'terma-help-docs'
+        echo 'YES!'
       }
     }
     stage('Deploy') {
