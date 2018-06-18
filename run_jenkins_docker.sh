@@ -1,0 +1,1 @@
+docker run -u root -d --rm -p 8085:8080 -v ~/jenkins_data:/var/jenkins_home -v ~/helpserver:/opt/termahelp --name help-ocean-container help-ocean

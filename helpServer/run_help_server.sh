@@ -1,0 +1,1 @@
+docker run -u root -d --rm -p 8083:8083 -v ~/helpserver:/opt/termahelp --name help-server-container help-server

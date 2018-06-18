@@ -5,6 +5,8 @@ const session = require('express-session');
 const fs = require('fs');
 const url = require('url');
 
+console.log(process.argv);
+
 const port = process.argv.length > 2 ? parseInt(process.argv[2]) : 8081;
 const static_dir = process.argv.length > 3 ? process.argv[3] : './';
 
