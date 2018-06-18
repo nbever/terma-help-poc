@@ -8,7 +8,16 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh 'echo ${WORKSPACE}: ${GIT_BRANCH}'
+        sh '''#!/bin/sh
+
+BRANCH = ${GIT_BRANCH}
+
+if [ $BRANCH = "master" ]
+then
+    BRANCH = `cat VERSION`
+fi
+
+cp -r ${WORKSPACE}/dist /opt/termahelp/${BRANCH}'''
       }
     }
   }
